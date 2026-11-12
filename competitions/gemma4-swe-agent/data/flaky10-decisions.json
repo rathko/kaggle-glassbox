@@ -25,7 +25,8 @@
   "verdict": "supported",
   "passed": true,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V26",
@@ -53,7 +54,8 @@
   "verdict": "supported",
   "passed": true,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V35",
@@ -81,7 +83,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V36",
@@ -108,7 +111,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V25",
@@ -137,7 +141,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": false,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V26",
@@ -166,7 +171,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": false,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V33",
@@ -193,7 +199,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V37",
@@ -222,7 +229,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V38",
@@ -251,7 +259,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V39",
@@ -280,7 +289,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V40",
@@ -309,7 +319,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V41",
@@ -338,7 +349,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V28",
@@ -367,7 +379,8 @@
   "verdict": "supported",
   "passed": true,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V29",
@@ -396,7 +409,8 @@
   "verdict": "supported",
   "passed": true,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": true
+  "armUnsealed": false,
+  "replacedDraw": true
  },
  {
   "anonPackage": "V30",
@@ -425,7 +439,8 @@
   "verdict": "refuted",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V31",
@@ -452,7 +467,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V42",
@@ -479,7 +495,8 @@
   "verdict": "refuted",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": true
+  "armUnsealed": false,
+  "replacedDraw": true
  },
  {
   "anonPackage": "V32",
@@ -510,7 +527,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": true
+  "armUnsealed": false,
+  "replacedDraw": true
  },
  {
   "anonPackage": "V43",
@@ -541,7 +559,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V44",
@@ -566,7 +585,8 @@
   "verdict": "refuted (build defect)",
   "passed": false,
   "primary": true,
-  "armUnsealed": true, "replacedDraw": false
+  "armUnsealed": true,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V45",
@@ -591,7 +611,8 @@
   "verdict": "refuted (build defect)",
   "passed": false,
   "primary": true,
-  "armUnsealed": true, "replacedDraw": false
+  "armUnsealed": true,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V46",
@@ -618,7 +639,8 @@
   "verdict": "refuted",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V47",
@@ -645,7 +667,8 @@
   "verdict": "refuted",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V48",
@@ -678,7 +701,8 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": false
+  "armUnsealed": false,
+  "replacedDraw": false
  },
  {
   "anonPackage": "V49",
@@ -711,7 +735,8 @@
   "verdict": "refuted",
   "passed": false,
   "primary": true,
-  "armUnsealed": false, "replacedDraw": true
+  "armUnsealed": false,
+  "replacedDraw": true
  },
  {
   "anonPackage": "V48",
@@ -746,6 +771,7 @@
   "verdict": "measured-null",
   "passed": false,
   "primary": false,
-  "armUnsealed": false, "replacedDraw": true
+  "armUnsealed": false,
+  "replacedDraw": true
  }
 ]

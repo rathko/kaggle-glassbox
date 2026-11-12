@@ -1,4 +1,4 @@
-# kaggle-measurement: the full guide
+# kaggle-glassbox: the full guide
 
 A measurement toolkit for agent competitions on Kaggle and similar leaderboards: a Kaggle competition, a
 private benchmark, any setup where one scored run costs real time or money and the score moves by a few tasks
@@ -7,7 +7,7 @@ its own folder under [`competitions/`](../competitions/) with its anonymised dat
 numbers. The first one is a SWE-bench-style coding-agent campaign
 ([`competitions/gemma4-swe-agent/`](../competitions/gemma4-swe-agent/)), where getting the *measurement* right mattered as much as getting the agent right.
 
-Repository: <https://github.com/rathko/kaggle-measurement>
+Repository: <https://github.com/rathko/kaggle-glassbox>
 
 No agent code, no working prompts, no dataset, and none of the configuration that scored best live here. The
 paper's data (in `competitions/gemma4-swe-agent/`) describes the ideas that did NOT work, including some of their settings,
@@ -862,12 +862,12 @@ The [`Dockerfile`](../Dockerfile) installs from the lockfile, typechecks, and ru
 integration) at build time, so an image only exists if everything passes.
 
 ```sh
-docker build -t kaggle-measurement .
-docker run --rm kaggle-measurement                                   # the suite again
-docker run --rm kaggle-measurement bun competitions/gemma4-swe-agent/scripts/reproduce-paper-numbers.ts
-docker run --rm --network host kaggle-measurement bun run dashboard   # loopback only, so share the host network
+docker build -t kaggle-glassbox .
+docker run --rm kaggle-glassbox                                   # the suite again
+docker run --rm kaggle-glassbox bun competitions/gemma4-swe-agent/scripts/reproduce-paper-numbers.ts
+docker run --rm --network host kaggle-glassbox bun run dashboard   # loopback only, so share the host network
 # optional: one tiny request through wire-tap to your own OpenAI-compatible server
-docker run --rm --network host -e LIVE_UPSTREAM=http://127.0.0.1:8010 kaggle-measurement bun test test/integration
+docker run --rm --network host -e LIVE_UPSTREAM=http://127.0.0.1:8010 kaggle-glassbox bun test test/integration
 ```
 
 ## What was intentionally left out

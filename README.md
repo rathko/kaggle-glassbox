@@ -1,4 +1,4 @@
-# kaggle-measurement
+# kaggle-glassbox
 
 **Know whether your agent got better, or just got lucky.**
 
@@ -36,7 +36,7 @@ looking at.
 ## See it in 60 seconds
 
 ```sh
-git clone https://github.com/rathko/kaggle-measurement && cd kaggle-measurement
+git clone https://github.com/rathko/kaggle-glassbox && cd kaggle-glassbox
 bun install
 bun run demo                       # the whole chain on a mock agent: no GPU, no key
 bun run lb noise --tasks 50 --rate 0.30   # how far two runs drift by pure chance
