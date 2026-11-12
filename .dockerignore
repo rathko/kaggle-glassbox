@@ -1,0 +1,11 @@
+# Mirrors .gitignore (scripts/dockerignore.test.ts checks it), so an image built from a working tree never
+# carries a file git would not publish: private leak patterns, local runs, captures, scratch output.
+node_modules
+.git
+**/*.log
+results
+tmp
+**/*.tsbuildinfo
+**/.DS_Store
+**/*.private.json
+/*.svg

@@ -1,0 +1,7 @@
+{
+  "rows": "task_results.jsonl",
+  "task_field": "id",
+  "prompt_field": "question",
+  "calls_field": "model_calls",
+  "concurrency": 8
+}

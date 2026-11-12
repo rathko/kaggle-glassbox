@@ -1,0 +1,751 @@
+[
+ {
+  "anonPackage": "V25",
+  "replicationOf": null,
+  "anonBlock": "K02",
+  "drawsArm": 3,
+  "drawsCtl": 4,
+  "controlType": "fixed-baseline",
+  "fixedBaselineValue": 4.25,
+  "fixedBaselineN": 4,
+  "comparator": "V21",
+  "passThreshold": 1,
+  "armCounts": [
+   7,
+   6,
+   6
+  ],
+  "ctlCounts": [
+   5,
+   3,
+   5,
+   4
+  ],
+  "effect": 2.08,
+  "verdict": "supported",
+  "passed": true,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V26",
+  "replicationOf": null,
+  "anonBlock": "K03",
+  "drawsArm": 3,
+  "drawsCtl": 4,
+  "controlType": "fixed-baseline",
+  "fixedBaselineValue": 4.25,
+  "fixedBaselineN": 4,
+  "comparator": "V21",
+  "passThreshold": 1,
+  "armCounts": [
+   6,
+   6,
+   5
+  ],
+  "ctlCounts": [
+   5,
+   3,
+   5,
+   4
+  ],
+  "effect": 1.42,
+  "verdict": "supported",
+  "passed": true,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V35",
+  "replicationOf": null,
+  "anonBlock": "K04",
+  "drawsArm": 3,
+  "drawsCtl": 4,
+  "controlType": "fixed-baseline",
+  "fixedBaselineValue": 4.25,
+  "fixedBaselineN": 4,
+  "comparator": "V21",
+  "passThreshold": 1,
+  "armCounts": [
+   4,
+   3,
+   4
+  ],
+  "ctlCounts": [
+   5,
+   3,
+   5,
+   4
+  ],
+  "effect": -0.58,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V36",
+  "replicationOf": null,
+  "anonBlock": "K05",
+  "drawsArm": 3,
+  "drawsCtl": 3,
+  "controlType": "historical-mean",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V25",
+  "passThreshold": 1,
+  "armCounts": [
+   7,
+   6,
+   3
+  ],
+  "ctlCounts": [
+   7,
+   6,
+   6
+  ],
+  "effect": -1,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V25",
+  "replicationOf": "V25",
+  "anonBlock": "K07",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V21",
+  "passThreshold": 1,
+  "armCounts": [
+   6,
+   4,
+   5,
+   4
+  ],
+  "ctlCounts": [
+   5,
+   4,
+   5,
+   2
+  ],
+  "effect": 0.75,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": false,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V26",
+  "replicationOf": "V26",
+  "anonBlock": "K07",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V21",
+  "passThreshold": 1,
+  "armCounts": [
+   6,
+   5,
+   4,
+   4
+  ],
+  "ctlCounts": [
+   5,
+   4,
+   5,
+   2
+  ],
+  "effect": 0.75,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": false,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V33",
+  "replicationOf": null,
+  "anonBlock": "K06",
+  "drawsArm": 3,
+  "drawsCtl": 3,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V25",
+  "passThreshold": 1,
+  "armCounts": [
+   3,
+   5,
+   5
+  ],
+  "ctlCounts": [
+   4,
+   5,
+   5
+  ],
+  "effect": -0.33,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V37",
+  "replicationOf": null,
+  "anonBlock": "K07",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V26",
+  "passThreshold": 1,
+  "armCounts": [
+   4,
+   4,
+   3,
+   7
+  ],
+  "ctlCounts": [
+   6,
+   5,
+   4,
+   4
+  ],
+  "effect": -0.25,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V38",
+  "replicationOf": null,
+  "anonBlock": "K08",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V25",
+  "passThreshold": 1,
+  "armCounts": [
+   7,
+   4,
+   6,
+   4
+  ],
+  "ctlCounts": [
+   6,
+   4,
+   5,
+   3
+  ],
+  "effect": 0.75,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V39",
+  "replicationOf": null,
+  "anonBlock": "K09",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V26",
+  "passThreshold": 1,
+  "armCounts": [
+   4,
+   5,
+   6,
+   6
+  ],
+  "ctlCounts": [
+   3,
+   5,
+   5,
+   7
+  ],
+  "effect": 0.25,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V40",
+  "replicationOf": null,
+  "anonBlock": "K10",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V26",
+  "passThreshold": 1,
+  "armCounts": [
+   5,
+   7,
+   3,
+   6
+  ],
+  "ctlCounts": [
+   6,
+   7,
+   3,
+   7
+  ],
+  "effect": -0.5,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V41",
+  "replicationOf": null,
+  "anonBlock": "K11",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V26",
+  "passThreshold": 1,
+  "armCounts": [
+   5,
+   5,
+   5,
+   4
+  ],
+  "ctlCounts": [
+   4,
+   5,
+   8,
+   6
+  ],
+  "effect": -1,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V28",
+  "replicationOf": null,
+  "anonBlock": "K12",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V26",
+  "passThreshold": 1,
+  "armCounts": [
+   8,
+   6,
+   3,
+   4
+  ],
+  "ctlCounts": [
+   5,
+   3,
+   4,
+   3
+  ],
+  "effect": 1.5,
+  "verdict": "supported",
+  "passed": true,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V29",
+  "replicationOf": null,
+  "anonBlock": "K13",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V28",
+  "passThreshold": 1,
+  "armCounts": [
+   5,
+   6,
+   4,
+   9
+  ],
+  "ctlCounts": [
+   5,
+   4,
+   6,
+   5
+  ],
+  "effect": 1,
+  "verdict": "supported",
+  "passed": true,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": true
+ },
+ {
+  "anonPackage": "V30",
+  "replicationOf": null,
+  "anonBlock": "K14",
+  "drawsArm": 4,
+  "drawsCtl": 4,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V28",
+  "passThreshold": 1,
+  "armCounts": [
+   4,
+   7,
+   5,
+   5
+  ],
+  "ctlCounts": [
+   5,
+   9,
+   6,
+   6
+  ],
+  "effect": -1.25,
+  "verdict": "refuted",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V31",
+  "replicationOf": null,
+  "anonBlock": "K15",
+  "drawsArm": 3,
+  "drawsCtl": 3,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V28",
+  "passThreshold": 1,
+  "armCounts": [
+   2,
+   6,
+   5
+  ],
+  "ctlCounts": [
+   2,
+   5,
+   6
+  ],
+  "effect": 0,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V42",
+  "replicationOf": null,
+  "anonBlock": "K15",
+  "drawsArm": 3,
+  "drawsCtl": 3,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V28",
+  "passThreshold": 1,
+  "armCounts": [
+   2,
+   3,
+   3
+  ],
+  "ctlCounts": [
+   2,
+   5,
+   6
+  ],
+  "effect": -1.67,
+  "verdict": "refuted",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": true
+ },
+ {
+  "anonPackage": "V32",
+  "replicationOf": null,
+  "anonBlock": "K16",
+  "drawsArm": 5,
+  "drawsCtl": 5,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": [
+   7,
+   4,
+   8,
+   4,
+   5
+  ],
+  "ctlCounts": [
+   5,
+   3,
+   4,
+   7,
+   7
+  ],
+  "effect": 0.4,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": true
+ },
+ {
+  "anonPackage": "V43",
+  "replicationOf": null,
+  "anonBlock": "K16",
+  "drawsArm": 5,
+  "drawsCtl": 5,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": [
+   4,
+   7,
+   4,
+   4,
+   5
+  ],
+  "ctlCounts": [
+   5,
+   3,
+   4,
+   7,
+   7
+  ],
+  "effect": -0.4,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V44",
+  "replicationOf": null,
+  "anonBlock": "K16",
+  "drawsArm": 5,
+  "drawsCtl": 5,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": null,
+  "ctlCounts": [
+   5,
+   3,
+   4,
+   7,
+   7
+  ],
+  "effect": -5.2,
+  "verdict": "refuted (build defect)",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": true, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V45",
+  "replicationOf": null,
+  "anonBlock": "K16",
+  "drawsArm": 5,
+  "drawsCtl": 5,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": null,
+  "ctlCounts": [
+   5,
+   3,
+   4,
+   7,
+   7
+  ],
+  "effect": -5.2,
+  "verdict": "refuted (build defect)",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": true, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V46",
+  "replicationOf": null,
+  "anonBlock": "K17",
+  "drawsArm": 3,
+  "drawsCtl": 3,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": [
+   2,
+   5,
+   4
+  ],
+  "ctlCounts": [
+   9,
+   4,
+   6
+  ],
+  "effect": -2.67,
+  "verdict": "refuted",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V47",
+  "replicationOf": null,
+  "anonBlock": "K17",
+  "drawsArm": 3,
+  "drawsCtl": 3,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": [
+   4,
+   5,
+   5
+  ],
+  "ctlCounts": [
+   9,
+   4,
+   6
+  ],
+  "effect": -1.67,
+  "verdict": "refuted",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V48",
+  "replicationOf": null,
+  "anonBlock": "K18",
+  "drawsArm": 6,
+  "drawsCtl": 6,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": [
+   5,
+   4,
+   4,
+   7,
+   6,
+   5
+  ],
+  "ctlCounts": [
+   7,
+   7,
+   4,
+   8,
+   3,
+   4
+  ],
+  "effect": -0.33,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": false
+ },
+ {
+  "anonPackage": "V49",
+  "replicationOf": null,
+  "anonBlock": "K18",
+  "drawsArm": 6,
+  "drawsCtl": 6,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": 1,
+  "armCounts": [
+   4,
+   4,
+   4,
+   4,
+   5,
+   5
+  ],
+  "ctlCounts": [
+   7,
+   7,
+   4,
+   8,
+   3,
+   4
+  ],
+  "effect": -1.17,
+  "verdict": "refuted",
+  "passed": false,
+  "primary": true,
+  "armUnsealed": false, "replacedDraw": true
+ },
+ {
+  "anonPackage": "V48",
+  "replicationOf": "V48",
+  "anonBlock": "K19",
+  "drawsArm": 7,
+  "drawsCtl": 7,
+  "controlType": "same-block",
+  "fixedBaselineValue": null,
+  "fixedBaselineN": null,
+  "comparator": "V31",
+  "passThreshold": null,
+  "armCounts": [
+   2,
+   6,
+   4,
+   5,
+   8,
+   7,
+   6
+  ],
+  "ctlCounts": [
+   3,
+   2,
+   6,
+   6,
+   4,
+   6,
+   5
+  ],
+  "effect": 0.86,
+  "verdict": "measured-null",
+  "passed": false,
+  "primary": false,
+  "armUnsealed": false, "replacedDraw": true
+ }
+]

@@ -1,0 +1,167 @@
+[
+ {
+  "stagePair": "screen->flaky10",
+  "adjacent": true,
+  "anonVariant": "V33",
+  "verdictFrom": "positive",
+  "verdictTo": "null",
+  "effectFrom": "n/a (1 draw)",
+  "effectTo": "-0.33 solves per 10-task draw [3 v 3 draws]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "screen->flaky10",
+  "adjacent": true,
+  "anonVariant": "V34",
+  "verdictFrom": "unknown",
+  "verdictTo": "unknown",
+  "effectFrom": "n/a (40+40 states x2)",
+  "effectTo": "n/a (9 of 16 rounds at interim)",
+  "agree3": null,
+  "agreeBinary": null
+ },
+ {
+  "stagePair": "flaky10->platform",
+  "adjacent": false,
+  "anonVariant": "V25",
+  "verdictFrom": "positive",
+  "verdictTo": "null",
+  "effectFrom": "+2.08 solves per 10-task draw [3 draws v fixed baseline 4.25]",
+  "effectTo": "+0.02 public score minus 0.13 [1 scoring v 1 scoring]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "flaky10->platform",
+  "adjacent": false,
+  "anonVariant": "V26",
+  "verdictFrom": "positive",
+  "verdictTo": "null",
+  "effectFrom": "+1.42 solves per 10-task draw [3 draws v fixed baseline 4.25]",
+  "effectTo": "+0.05 public score minus 0.13 [1 scoring v 1 scoring]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "flaky10->fast43",
+  "adjacent": true,
+  "anonVariant": "V28",
+  "verdictFrom": "positive",
+  "verdictTo": "null",
+  "effectFrom": "+1.5 solves per 10-task draw [4 v 4 draws]",
+  "effectTo": "+2.5 129-equivalent resolves [4 v 4 draws]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "flaky10->platform",
+  "adjacent": false,
+  "anonVariant": "V28",
+  "verdictFrom": "positive",
+  "verdictTo": "null",
+  "effectFrom": "+1.5 solves per 10-task draw [4 v 4 draws]",
+  "effectTo": "0 public score minus 0.18 [1 scoring v 1 scoring]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "fast43->platform",
+  "adjacent": true,
+  "anonVariant": "V28",
+  "verdictFrom": "null",
+  "verdictTo": "null",
+  "effectFrom": "+2.5 129-equivalent resolves [4 v 4 draws]",
+  "effectTo": "0 public score minus 0.18 [1 scoring v 1 scoring]",
+  "agree3": true,
+  "agreeBinary": true
+ },
+ {
+  "stagePair": "flaky10->platform",
+  "adjacent": false,
+  "anonVariant": "V29",
+  "verdictFrom": "positive",
+  "verdictTo": "null",
+  "effectFrom": "+1 solves per 10-task draw [4 v 4 draws]",
+  "effectTo": "0 public score minus 0.18 [1 scoring v 1 scoring]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "flaky10->platform",
+  "adjacent": false,
+  "anonVariant": "V30",
+  "verdictFrom": "negative",
+  "verdictTo": "null",
+  "effectFrom": "-1.25 solves per 10-task draw [4 v 4 draws]",
+  "effectTo": "-0.03 public score minus 0.18 [1 scoring v 1 scoring]",
+  "agree3": false,
+  "agreeBinary": true
+ },
+ {
+  "stagePair": "flaky10->platform",
+  "adjacent": false,
+  "anonVariant": "V31",
+  "verdictFrom": "null",
+  "verdictTo": "null",
+  "effectFrom": "0 solves per 10-task draw [3 v 3 draws]",
+  "effectTo": "-0.01 public score minus 0.18 [1 scoring v 1 scoring]",
+  "agree3": true,
+  "agreeBinary": true
+ },
+ {
+  "stagePair": "flaky10->fast43",
+  "adjacent": true,
+  "anonVariant": "V32",
+  "verdictFrom": "null",
+  "verdictTo": "null",
+  "effectFrom": "+0.4 solves per 10-task draw [5 v 5 draws]",
+  "effectTo": "+1 summed holdout-28 solves [2 v 2 draws]",
+  "agree3": true,
+  "agreeBinary": true
+ },
+ {
+  "stagePair": "flaky10->platform",
+  "adjacent": false,
+  "anonVariant": "V32",
+  "verdictFrom": "null",
+  "verdictTo": "positive",
+  "effectFrom": "+0.4 solves per 10-task draw [5 v 5 draws]",
+  "effectTo": "+0.06 public score minus 0.18 [1 scoring v 1 scoring]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "fast43->platform",
+  "adjacent": true,
+  "anonVariant": "V32",
+  "verdictFrom": "null",
+  "verdictTo": "positive",
+  "effectFrom": "+1 summed holdout-28 solves [2 v 2 draws]",
+  "effectTo": "+0.06 public score minus 0.18 [1 scoring v 1 scoring]",
+  "agree3": false,
+  "agreeBinary": false
+ },
+ {
+  "stagePair": "fast43->platform",
+  "adjacent": true,
+  "anonVariant": "V23",
+  "verdictFrom": "null",
+  "verdictTo": "null",
+  "effectFrom": "+2.18 129-equivalent resolves [4 draws v fixed baseline 45.57]",
+  "effectTo": "+0.05 public score minus 0.13 [1 scoring v 1 scoring]",
+  "agree3": true,
+  "agreeBinary": true
+ },
+ {
+  "stagePair": "fast43->platform",
+  "adjacent": true,
+  "anonVariant": "V24",
+  "verdictFrom": "null",
+  "verdictTo": "null",
+  "effectFrom": "+1.68 129-equivalent resolves [4 draws v fixed baseline 45.57]",
+  "effectTo": "+0.04 public score minus 0.13 [1 scoring v 1 scoring]",
+  "agree3": true,
+  "agreeBinary": true
+ }
+]

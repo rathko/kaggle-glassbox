@@ -1,0 +1,38 @@
+{
+  "name": "kaggle-measurement",
+  "version": "0.1.0",
+  "description": "Measurement instruments for agent and model evaluations on small, noisy, expensive leaderboards (Kaggle and similar): full-fidelity capture of model traffic, cheap step and fork replay before a scored run, a seal-on-read score gate, budget projection, and the noise-floor statistics to tell a real result from chance. First used on a SWE-bench-style coding-agent campaign (competitions/gemma4-swe-agent).",
+  "license": "Apache-2.0",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "leaderboard": "src/cli/leaderboard.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rathko/kaggle-measurement"
+  },
+  "exports": {
+    "./noise-floor": "./src/noise-floor/noise-floor.ts",
+    "./aa-splits": "./src/noise-floor/aa-splits.ts",
+    "./score-quantisation": "./src/score-quant/score-quantisation.ts",
+    "./concordance": "./src/concordance/concordance.ts",
+    "./preread": "./src/preread/preread.ts",
+    "./stage-gate": "./src/queue/stage-gate.ts",
+    "./score-gate": "./src/integrity/score-gate.ts",
+    "./sse": "./src/capture/sse.ts",
+    "./endpoint": "./src/replay/endpoint.ts",
+    "./fork-run-steps": "./src/replay/fork-run-steps.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "bunx tsc --noEmit -p .",
+    "demo": "bun examples/demo.ts",
+    "lb": "bun src/cli/leaderboard.ts",
+    "paper-numbers": "bun competitions/gemma4-swe-agent/scripts/reproduce-paper-numbers.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}

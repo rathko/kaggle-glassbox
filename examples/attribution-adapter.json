@@ -1,0 +1,16 @@
+{
+  "_comment": "Example adapter for src/capture/capture-attribute.ts --adapter. Describes a made-up harness that writes one trace per task at agent-logs/<id>.json, shaped { events: [{ who, text, calls: [{ tool, input }] }] }, and touches agent-logs/<id>.done when the task ends. Point each key at your own harness's layout; every key is optional.",
+  "rows": "task_results.jsonl",
+  "task_field": "instance_id",
+  "calls_field": "model_calls",
+  "trace": "agent-logs/{id}.json",
+  "trace_steps": "events",
+  "step_calls": "calls",
+  "call_name": "tool",
+  "call_args": "input",
+  "step_text": "text",
+  "step_role": "who",
+  "agent_role": "model",
+  "done_marker": "agent-logs/{id}.done",
+  "concurrency": 1
+}
