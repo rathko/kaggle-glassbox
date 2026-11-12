@@ -11,6 +11,8 @@ looking at.
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 [![Bun](https://img.shields.io/badge/runtime-Bun%201.3+-black.svg)](https://bun.sh)
 
+**Read the paper:** [Two Old GPUs and a Glass Box](competitions/gemma4-swe-agent/paper/paper.md) · **Try the dashboard:** [live demo](https://rathko.github.io/kaggle-glassbox/)
+
 ![A real run of examples/live-e2e: capture, clean drain, sealed read, live step replay and a live fork against Gemma 4 31B](docs/img/live-e2e.svg)
 
 ## Works with
