@@ -158,6 +158,9 @@ both. No clean rerun of the 42-step self-test is in the ledger.
 |---|---|---|
 | Figure 1, score per upload with re-score band | `scripts/fig-score-timeline.ts` | `platform-history.csv` |
 | Figure 7, every flaky-10 decision against its own null | `scripts/fig-decisions.ts` | `flaky10-decisions.json` |
+| Figure 6 (public counterpart): how every released attempt ended, per group | `scripts/fig-frontier.ts` | `attempts.csv` |
+| The false-pass curve behind the 13-21% rate | `scripts/fig-false-pass.ts` | the per-draw SD 1.51 above |
+| Same bytes drifting between blocks (the A/A check) | `scripts/fig-flaky10-drift.ts` | `flaky10-drift.csv` |
 | Re-score SD 1.46 tasks; 4 identical-bytes pairs | `scripts/reproduce-paper-numbers.ts` | `platform-history.csv` |
 | Per-draw SD 1.51; 13-21% modelled false-pass rate; 4 of 23 promoted, 4.1 expected | `scripts/reproduce-paper-numbers.ts` | `flaky10-task-outcomes.csv`, `flaky10-decisions.json` |
 | ~14 draws per idea for < 5% false passes | `src/stats/draws-needed.ts` | `flaky10-task-outcomes.csv` |
@@ -173,6 +176,11 @@ both. No clean rerun of the 42-step self-test is in the ledger.
 The A/A-through-gate expectation is printed twice: the paper's normal model (10.9) and, with the continuity
 correction for integer solve counts where ties pass, 12.1. Both sit below the observed 14 of 62, which are not
 independent trials.
+
+Figures 2 to 5 of the paper are screenshots of the campaign's private dashboard on runs that predate the released
+data. The released toolkit has its own dashboard (`bun run dashboard`, [guide](../../../docs/guide.md#dashboard)): its
+task and compare views are the public counterparts of Figures 2 and 5, and its page for this competition draws
+every figure above live from `data/`.
 
 ## Generalisation notes (how the tools differ from the campaign's own copies)
 

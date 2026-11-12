@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" font-family="Helvetica, Arial, sans-serif" font-size="12"><rect width="100%" height="100%" fill="white"/>
+<line x1="60" x2="730" y1="310" y2="310" stroke="#e5e7eb"/><text x="52" y="314" text-anchor="end" fill="#374151">3</text>
+<line x1="60" x2="730" y1="245" y2="245" stroke="#e5e7eb"/><text x="52" y="249" text-anchor="end" fill="#374151">4</text>
+<line x1="60" x2="730" y1="180" y2="180" stroke="#e5e7eb"/><text x="52" y="184" text-anchor="end" fill="#374151">5</text>
+<line x1="60" x2="730" y1="115" y2="115" stroke="#e5e7eb"/><text x="52" y="119" text-anchor="end" fill="#374151">6</text>
+<line x1="60" x2="730" y1="50" y2="50" stroke="#e5e7eb"/><text x="52" y="54" text-anchor="end" fill="#374151">7</text>
+<circle cx="93.5" cy="136.45" r="5" fill="#1d4ed8"/>
+<circle cx="124.76666666666668" cy="196.25" r="5" fill="#1d4ed8"/>
+<circle cx="156.03333333333336" cy="180" r="5" fill="#1d4ed8"/>
+<circle cx="187.3" cy="131.25" r="5" fill="#1d4ed8"/>
+<circle cx="218.5666666666667" cy="131.25" r="5" fill="#1d4ed8"/>
+<circle cx="249.83333333333337" cy="261.25" r="5" fill="#1d4ed8"/>
+<line x1="263.83333333333337" x2="263.83333333333337" y1="131.25" y2="261.25" stroke="#6b7280" stroke-width="2"/>
+<line x1="275.83333333333337" x2="275.83333333333337" y1="196.25" y2="261.25" stroke="#dc2626" stroke-width="4"/>
+<text x="171.66666666666669" y="332" text-anchor="middle" fill="#111827">package A: 3.75–5.75</text>
+<circle cx="316.83333333333337" cy="163.75" r="5" fill="#1d4ed8"/>
+<circle cx="368.94444444444446" cy="180" r="5" fill="#1d4ed8"/>
+<circle cx="421.0555555555556" cy="82.5" r="5" fill="#1d4ed8"/>
+<circle cx="473.1666666666667" cy="223.54999999999998" r="5" fill="#1d4ed8"/>
+<line x1="487.1666666666667" x2="487.1666666666667" y1="82.5" y2="223.54999999999998" stroke="#6b7280" stroke-width="2"/>
+<line x1="499.1666666666667" x2="499.1666666666667" y1="158.55" y2="223.54999999999998" stroke="#dc2626" stroke-width="4"/>
+<text x="395" y="332" text-anchor="middle" fill="#111827">package B: 4.33–6.5</text>
+<circle cx="540.1666666666667" cy="223.54999999999998" r="5" fill="#1d4ed8"/>
+<circle cx="579.25" cy="167" r="5" fill="#1d4ed8"/>
+<circle cx="618.3333333333334" cy="93.55" r="5" fill="#1d4ed8"/>
+<circle cx="657.4166666666667" cy="147.5" r="5" fill="#1d4ed8"/>
+<circle cx="696.5" cy="207.95" r="5" fill="#1d4ed8"/>
+<line x1="710.5" x2="710.5" y1="93.55" y2="223.54999999999998" stroke="#6b7280" stroke-width="2"/>
+<line x1="722.5" x2="722.5" y1="158.55" y2="223.54999999999998" stroke="#dc2626" stroke-width="4"/>
+<text x="618.3333333333334" y="332" text-anchor="middle" fill="#111827">package C: 4.33–6.33</text>
+<text x="60" y="24" font-size="15" font-weight="bold">Same bytes, different blocks: mean solves per 10-task draw</text>
+<text x="60" y="40" fill="#6b7280">Grey bar: each package's spread across blocks. Red bar: the 1-solve promotion bar, to scale.</text></svg>

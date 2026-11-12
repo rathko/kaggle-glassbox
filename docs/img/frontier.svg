@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" font-family="Helvetica, Arial, sans-serif" font-size="12"><rect width="100%" height="100%" fill="white"/>
+<line x1="120" x2="120" y1="80" y2="480" stroke="#e5e7eb"/><text x="120" y="496" text-anchor="middle" fill="#374151">0%</text>
+<line x1="272.5" x2="272.5" y1="80" y2="480" stroke="#e5e7eb"/><text x="272.5" y="496" text-anchor="middle" fill="#374151">25%</text>
+<line x1="425" x2="425" y1="80" y2="480" stroke="#e5e7eb"/><text x="425" y="496" text-anchor="middle" fill="#374151">50%</text>
+<line x1="577.5" x2="577.5" y1="80" y2="480" stroke="#e5e7eb"/><text x="577.5" y="496" text-anchor="middle" fill="#374151">75%</text>
+<line x1="730" x2="730" y1="80" y2="480" stroke="#e5e7eb"/><text x="730" y="496" text-anchor="middle" fill="#374151">100%</text>
+<text x="112" y="96" text-anchor="end" fill="#374151" font-size="11">F01 · 129-task · n=258</text>
+<rect x="120.0" y="86" width="215.2" height="14" fill="#16a34a"><title>F01: resolved 91/258</title></rect>
+<rect x="335.2" y="86" width="163.1" height="14" fill="#dc2626"><title>F01: stopped with a wrong fix 69/258</title></rect>
+<rect x="498.3" y="86" width="182.1" height="14" fill="#7c3aed"><title>F01: call limit 77/258</title></rect>
+<rect x="680.3" y="86" width="30.7" height="14" fill="#a78bfa"><title>F01: turn limit 13/258</title></rect>
+<rect x="711.1" y="86" width="11.8" height="14" fill="#d97706"><title>F01: time limit 5/258</title></rect>
+<rect x="722.9" y="86" width="7.1" height="14" fill="#6b7280"><title>F01: error 3/258</title></rect>
+<text x="112" y="114" text-anchor="end" fill="#374151" font-size="11">F02 · 129-task · n=129</text>
+<rect x="120.0" y="104" width="231.7" height="14" fill="#16a34a"><title>F02: resolved 49/129</title></rect>
+<rect x="351.7" y="104" width="151.3" height="14" fill="#dc2626"><title>F02: stopped with a wrong fix 32/129</title></rect>
+<rect x="503.0" y="104" width="179.7" height="14" fill="#7c3aed"><title>F02: call limit 38/129</title></rect>
+<rect x="682.7" y="104" width="28.4" height="14" fill="#a78bfa"><title>F02: turn limit 6/129</title></rect>
+<rect x="711.1" y="104" width="14.2" height="14" fill="#d97706"><title>F02: time limit 3/129</title></rect>
+<rect x="725.3" y="104" width="4.7" height="14" fill="#6b7280"><title>F02: error 1/129</title></rect>
+<text x="112" y="132" text-anchor="end" fill="#374151" font-size="11">F03 · 129-task · n=258</text>
+<rect x="120.0" y="122" width="219.9" height="14" fill="#16a34a"><title>F03: resolved 93/258</title></rect>
+<rect x="339.9" y="122" width="153.7" height="14" fill="#dc2626"><title>F03: stopped with a wrong fix 65/258</title></rect>
+<rect x="493.6" y="122" width="160.8" height="14" fill="#7c3aed"><title>F03: call limit 68/258</title></rect>
+<rect x="654.3" y="122" width="47.3" height="14" fill="#a78bfa"><title>F03: turn limit 20/258</title></rect>
+<rect x="701.6" y="122" width="21.3" height="14" fill="#d97706"><title>F03: time limit 9/258</title></rect>
+<rect x="722.9" y="122" width="7.1" height="14" fill="#6b7280"><title>F03: error 3/258</title></rect>
+<text x="112" y="150" text-anchor="end" fill="#374151" font-size="11">F04 · 129-task · n=258</text>
+<rect x="120.0" y="140" width="203.3" height="14" fill="#16a34a"><title>F04: resolved 86/258</title></rect>
+<rect x="323.3" y="140" width="87.5" height="14" fill="#dc2626"><title>F04: stopped with a wrong fix 37/258</title></rect>
+<rect x="410.8" y="140" width="241.2" height="14" fill="#7c3aed"><title>F04: call limit 102/258</title></rect>
+<rect x="652.0" y="140" width="42.6" height="14" fill="#a78bfa"><title>F04: turn limit 18/258</title></rect>
+<rect x="694.5" y="140" width="28.4" height="14" fill="#d97706"><title>F04: time limit 12/258</title></rect>
+<rect x="722.9" y="140" width="7.1" height="14" fill="#6b7280"><title>F04: error 3/258</title></rect>
+<text x="112" y="168" text-anchor="end" fill="#374151" font-size="11">F05 · 129-task · n=258</text>
+<rect x="120.0" y="158" width="227.0" height="14" fill="#16a34a"><title>F05: resolved 96/258</title></rect>
+<rect x="347.0" y="158" width="153.7" height="14" fill="#dc2626"><title>F05: stopped with a wrong fix 65/258</title></rect>
+<rect x="500.7" y="158" width="130.0" height="14" fill="#7c3aed"><title>F05: call limit 55/258</title></rect>
+<rect x="630.7" y="158" width="85.1" height="14" fill="#a78bfa"><title>F05: turn limit 36/258</title></rect>
+<rect x="715.8" y="158" width="9.5" height="14" fill="#d97706"><title>F05: time limit 4/258</title></rect>
+<rect x="725.3" y="158" width="4.7" height="14" fill="#6b7280"><title>F05: error 2/258</title></rect>
+<text x="112" y="186" text-anchor="end" fill="#374151" font-size="11">F06 · 43-task · n=172</text>
+<rect x="120.0" y="176" width="372.4" height="14" fill="#16a34a"><title>F06: resolved 105/172</title></rect>
+<rect x="492.4" y="176" width="78.0" height="14" fill="#dc2626"><title>F06: stopped with a wrong fix 22/172</title></rect>
+<rect x="570.4" y="176" width="85.1" height="14" fill="#7c3aed"><title>F06: call limit 24/172</title></rect>
+<rect x="655.5" y="176" width="60.3" height="14" fill="#a78bfa"><title>F06: turn limit 17/172</title></rect>
+<rect x="715.8" y="176" width="14.2" height="14" fill="#d97706"><title>F06: time limit 4/172</title></rect>
+<text x="112" y="204" text-anchor="end" fill="#374151" font-size="11">F07 · 129-task · n=129</text>
+<rect x="120.0" y="194" width="227.0" height="14" fill="#16a34a"><title>F07: resolved 48/129</title></rect>
+<rect x="347.0" y="194" width="165.5" height="14" fill="#dc2626"><title>F07: stopped with a wrong fix 35/129</title></rect>
+<rect x="512.5" y="194" width="151.3" height="14" fill="#7c3aed"><title>F07: call limit 32/129</title></rect>
+<rect x="663.8" y="194" width="47.3" height="14" fill="#a78bfa"><title>F07: turn limit 10/129</title></rect>
+<rect x="711.1" y="194" width="14.2" height="14" fill="#d97706"><title>F07: time limit 3/129</title></rect>
+<rect x="725.3" y="194" width="4.7" height="14" fill="#6b7280"><title>F07: error 1/129</title></rect>
+<text x="112" y="222" text-anchor="end" fill="#374151" font-size="11">F08 · 43-task · n=129</text>
+<rect x="120.0" y="212" width="354.7" height="14" fill="#16a34a"><title>F08: resolved 75/129</title></rect>
+<rect x="474.7" y="212" width="108.8" height="14" fill="#dc2626"><title>F08: stopped with a wrong fix 23/129</title></rect>
+<rect x="583.4" y="212" width="99.3" height="14" fill="#7c3aed"><title>F08: call limit 21/129</title></rect>
+<rect x="682.7" y="212" width="28.4" height="14" fill="#a78bfa"><title>F08: turn limit 6/129</title></rect>
+<rect x="711.1" y="212" width="18.9" height="14" fill="#d97706"><title>F08: time limit 4/129</title></rect>
+<text x="112" y="240" text-anchor="end" fill="#374151" font-size="11">F09 · 43-task · n=172</text>
+<rect x="120.0" y="230" width="372.4" height="14" fill="#16a34a"><title>F09: resolved 105/172</title></rect>
+<rect x="492.4" y="230" width="81.6" height="14" fill="#dc2626"><title>F09: stopped with a wrong fix 23/172</title></rect>
+<rect x="574.0" y="230" width="88.7" height="14" fill="#7c3aed"><title>F09: call limit 25/172</title></rect>
+<rect x="662.6" y="230" width="56.7" height="14" fill="#a78bfa"><title>F09: turn limit 16/172</title></rect>
+<rect x="719.4" y="230" width="10.6" height="14" fill="#d97706"><title>F09: time limit 3/172</title></rect>
+<text x="112" y="258" text-anchor="end" fill="#374151" font-size="11">F10 · 43-task · n=86</text>
+<rect x="120.0" y="248" width="276.6" height="14" fill="#16a34a"><title>F10: resolved 39/86</title></rect>
+<rect x="396.6" y="248" width="49.7" height="14" fill="#dc2626"><title>F10: stopped with a wrong fix 7/86</title></rect>
+<rect x="446.3" y="248" width="21.3" height="14" fill="#7c3aed"><title>F10: call limit 3/86</title></rect>
+<rect x="467.6" y="248" width="7.1" height="14" fill="#a78bfa"><title>F10: turn limit 1/86</title></rect>
+<rect x="474.7" y="248" width="255.3" height="14" fill="#d97706"><title>F10: time limit 36/86</title></rect>
+<text x="112" y="276" text-anchor="end" fill="#374151" font-size="11">F12 · 43-task · n=172</text>
+<rect x="120.0" y="266" width="322.7" height="14" fill="#16a34a"><title>F12: resolved 91/172</title></rect>
+<rect x="442.7" y="266" width="141.9" height="14" fill="#dc2626"><title>F12: stopped with a wrong fix 40/172</title></rect>
+<rect x="584.6" y="266" width="109.9" height="14" fill="#7c3aed"><title>F12: call limit 31/172</title></rect>
+<rect x="694.5" y="266" width="17.7" height="14" fill="#a78bfa"><title>F12: turn limit 5/172</title></rect>
+<rect x="712.3" y="266" width="17.7" height="14" fill="#d97706"><title>F12: time limit 5/172</title></rect>
+<text x="112" y="294" text-anchor="end" fill="#374151" font-size="11">V21 · flaky-10 · n=110</text>
+<rect x="120.0" y="284" width="277.3" height="14" fill="#16a34a"><title>V21: resolved 50/110</title></rect>
+<rect x="397.3" y="284" width="138.6" height="14" fill="#dc2626"><title>V21: stopped with a wrong fix 25/110</title></rect>
+<rect x="535.9" y="284" width="149.7" height="14" fill="#7c3aed"><title>V21: call limit 27/110</title></rect>
+<rect x="685.6" y="284" width="44.4" height="14" fill="#d97706"><title>V21: time limit 8/110</title></rect>
+<text x="112" y="312" text-anchor="end" fill="#374151" font-size="11">V25 · flaky-10 · n=140</text>
+<rect x="120.0" y="302" width="305.0" height="14" fill="#16a34a"><title>V25: resolved 70/140</title></rect>
+<rect x="425.0" y="302" width="104.6" height="14" fill="#dc2626"><title>V25: stopped with a wrong fix 24/140</title></rect>
+<rect x="529.6" y="302" width="104.6" height="14" fill="#7c3aed"><title>V25: call limit 24/140</title></rect>
+<rect x="634.1" y="302" width="17.4" height="14" fill="#a78bfa"><title>V25: turn limit 4/140</title></rect>
+<rect x="651.6" y="302" width="78.4" height="14" fill="#d97706"><title>V25: time limit 18/140</title></rect>
+<text x="112" y="330" text-anchor="end" fill="#374151" font-size="11">V26 · flaky-10 · n=230</text>
+<rect x="120.0" y="320" width="310.3" height="14" fill="#16a34a"><title>V26: resolved 117/230</title></rect>
+<rect x="430.3" y="320" width="143.2" height="14" fill="#dc2626"><title>V26: stopped with a wrong fix 54/230</title></rect>
+<rect x="573.5" y="320" width="87.5" height="14" fill="#7c3aed"><title>V26: call limit 33/230</title></rect>
+<rect x="661.0" y="320" width="10.6" height="14" fill="#a78bfa"><title>V26: turn limit 4/230</title></rect>
+<rect x="671.7" y="320" width="58.3" height="14" fill="#d97706"><title>V26: time limit 22/230</title></rect>
+<text x="112" y="348" text-anchor="end" fill="#374151" font-size="11">V33 · flaky-10 · n=30</text>
+<rect x="120.0" y="338" width="264.3" height="14" fill="#16a34a"><title>V33: resolved 13/30</title></rect>
+<rect x="384.3" y="338" width="101.7" height="14" fill="#dc2626"><title>V33: stopped with a wrong fix 5/30</title></rect>
+<rect x="486.0" y="338" width="183.0" height="14" fill="#7c3aed"><title>V33: call limit 9/30</title></rect>
+<rect x="669.0" y="338" width="61.0" height="14" fill="#d97706"><title>V33: time limit 3/30</title></rect>
+<text x="112" y="366" text-anchor="end" fill="#374151" font-size="11">V35 · flaky-10 · n=30</text>
+<rect x="120.0" y="356" width="223.7" height="14" fill="#16a34a"><title>V35: resolved 11/30</title></rect>
+<rect x="343.7" y="356" width="203.3" height="14" fill="#dc2626"><title>V35: stopped with a wrong fix 10/30</title></rect>
+<rect x="547.0" y="356" width="81.3" height="14" fill="#7c3aed"><title>V35: call limit 4/30</title></rect>
+<rect x="628.3" y="356" width="20.3" height="14" fill="#a78bfa"><title>V35: turn limit 1/30</title></rect>
+<rect x="648.7" y="356" width="81.3" height="14" fill="#d97706"><title>V35: time limit 4/30</title></rect>
+<text x="112" y="384" text-anchor="end" fill="#374151" font-size="11">V36 · flaky-10 · n=30</text>
+<rect x="120.0" y="374" width="325.3" height="14" fill="#16a34a"><title>V36: resolved 16/30</title></rect>
+<rect x="445.3" y="374" width="61.0" height="14" fill="#dc2626"><title>V36: stopped with a wrong fix 3/30</title></rect>
+<rect x="506.3" y="374" width="142.3" height="14" fill="#7c3aed"><title>V36: call limit 7/30</title></rect>
+<rect x="648.7" y="374" width="81.3" height="14" fill="#d97706"><title>V36: time limit 4/30</title></rect>
+<text x="112" y="402" text-anchor="end" fill="#374151" font-size="11">V37 · flaky-10 · n=40</text>
+<rect x="120.0" y="392" width="274.5" height="14" fill="#16a34a"><title>V37: resolved 18/40</title></rect>
+<rect x="394.5" y="392" width="167.8" height="14" fill="#dc2626"><title>V37: stopped with a wrong fix 11/40</title></rect>
+<rect x="562.3" y="392" width="137.3" height="14" fill="#7c3aed"><title>V37: call limit 9/40</title></rect>
+<rect x="699.5" y="392" width="30.5" height="14" fill="#d97706"><title>V37: time limit 2/40</title></rect>
+<text x="112" y="420" text-anchor="end" fill="#374151" font-size="11">V38 · flaky-10 · n=40</text>
+<rect x="120.0" y="410" width="320.3" height="14" fill="#16a34a"><title>V38: resolved 21/40</title></rect>
+<rect x="440.3" y="410" width="213.5" height="14" fill="#dc2626"><title>V38: stopped with a wrong fix 14/40</title></rect>
+<rect x="653.8" y="410" width="61.0" height="14" fill="#7c3aed"><title>V38: call limit 4/40</title></rect>
+<rect x="714.8" y="410" width="15.3" height="14" fill="#a78bfa"><title>V38: turn limit 1/40</title></rect>
+<text x="112" y="438" text-anchor="end" fill="#374151" font-size="11">V39 · flaky-10 · n=40</text>
+<rect x="120.0" y="428" width="320.3" height="14" fill="#16a34a"><title>V39: resolved 21/40</title></rect>
+<rect x="440.3" y="428" width="137.3" height="14" fill="#dc2626"><title>V39: stopped with a wrong fix 9/40</title></rect>
+<rect x="577.5" y="428" width="91.5" height="14" fill="#7c3aed"><title>V39: call limit 6/40</title></rect>
+<rect x="669.0" y="428" width="61.0" height="14" fill="#d97706"><title>V39: time limit 4/40</title></rect>
+<text x="112" y="456" text-anchor="end" fill="#374151" font-size="11">V40 · flaky-10 · n=40</text>
+<rect x="120.0" y="446" width="320.3" height="14" fill="#16a34a"><title>V40: resolved 21/40</title></rect>
+<rect x="440.3" y="446" width="122.0" height="14" fill="#dc2626"><title>V40: stopped with a wrong fix 8/40</title></rect>
+<rect x="562.3" y="446" width="152.5" height="14" fill="#7c3aed"><title>V40: call limit 10/40</title></rect>
+<rect x="714.8" y="446" width="15.3" height="14" fill="#a78bfa"><title>V40: turn limit 1/40</title></rect>
+<text x="112" y="474" text-anchor="end" fill="#374151" font-size="11">V41 · flaky-10 · n=40</text>
+<rect x="120.0" y="464" width="289.8" height="14" fill="#16a34a"><title>V41: resolved 19/40</title></rect>
+<rect x="409.8" y="464" width="106.8" height="14" fill="#dc2626"><title>V41: stopped with a wrong fix 7/40</title></rect>
+<rect x="516.5" y="464" width="91.5" height="14" fill="#7c3aed"><title>V41: call limit 6/40</title></rect>
+<rect x="608.0" y="464" width="30.5" height="14" fill="#a78bfa"><title>V41: turn limit 2/40</title></rect>
+<rect x="638.5" y="464" width="91.5" height="14" fill="#d97706"><title>V41: time limit 6/40</title></rect>
+<rect x="10" y="56" width="10" height="10" fill="#16a34a"/><text x="24" y="65" fill="#374151" font-size="11">resolved</text>
+<rect x="82" y="56" width="10" height="10" fill="#dc2626"/><text x="96" y="65" fill="#374151" font-size="11">stopped with a wrong fix</text>
+<rect x="250" y="56" width="10" height="10" fill="#7c3aed"/><text x="264" y="65" fill="#374151" font-size="11">call limit</text>
+<rect x="334" y="56" width="10" height="10" fill="#a78bfa"/><text x="348" y="65" fill="#374151" font-size="11">turn limit</text>
+<rect x="418" y="56" width="10" height="10" fill="#d97706"/><text x="432" y="65" fill="#374151" font-size="11">time limit</text>
+<rect x="502" y="56" width="10" height="10" fill="#0891b2"/><text x="516" y="65" fill="#374151" font-size="11">context limit</text>
+<rect x="604" y="56" width="10" height="10" fill="#6b7280"/><text x="618" y="65" fill="#374151" font-size="11">error</text>
+<text x="10" y="22" font-size="15" font-weight="bold">How every attempt ended, per group</text>
+<text x="10" y="40" fill="#6b7280">2791 attempts with a released stop reason (1194 withheld left out): 21% stopped with a wrong fix, 22% hit the call limit.</text></svg>

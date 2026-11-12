@@ -1,0 +1,16 @@
+{"instance_id":"task-01","resolved":false,"model_calls":9}
+{"instance_id":"task-02","resolved":false,"model_calls":3}
+{"instance_id":"task-03","resolved":true,"model_calls":8}
+{"instance_id":"task-04","resolved":false,"model_calls":9}
+{"instance_id":"task-05","resolved":false,"model_calls":3}
+{"instance_id":"task-06","resolved":true,"model_calls":4}
+{"instance_id":"task-07","resolved":false,"model_calls":7}
+{"instance_id":"task-08","resolved":false,"model_calls":6}
+{"instance_id":"task-09","resolved":false,"model_calls":9}
+{"instance_id":"task-10","resolved":true,"model_calls":6}
+{"instance_id":"task-11","resolved":false,"model_calls":3}
+{"instance_id":"task-12","resolved":false,"model_calls":6}
+{"instance_id":"task-13","resolved":false,"model_calls":3}
+{"instance_id":"task-14","resolved":true,"model_calls":4}
+{"instance_id":"task-15","resolved":true,"model_calls":5}
+{"instance_id":"task-16","resolved":false,"model_calls":8}

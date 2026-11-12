@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kaggle-measurement dashboard</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='18' width='5' height='10' fill='%2358a6ff'/%3E%3Crect x='13' y='10' width='5' height='18' fill='%233fb950'/%3E%3Crect x='22' y='4' width='5' height='24' fill='%23d29922'/%3E%3C/svg%3E">
+<style>
+  :root { color-scheme: dark; --bg:#0d1117; --panel:#161b22; --line:#30363d; --fg:#c9d1d9; --hi:#e6edf3; --mute:#8b949e; --link:#58a6ff;
+          --pass:#238636; --fail:#da3633; --hide:#30363d; }
+  body { font: 1rem/1.5 system-ui, sans-serif; background:var(--bg); color:var(--fg); margin:0; }
+  header { padding:10px 18px; background:var(--panel); border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:18px; align-items:baseline; }
+  header b { color:var(--hi); }
+  a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+  nav a { margin-right:14px; } nav a.on { color:var(--hi); font-weight:600; }
+  main { padding:14px 18px 40px; max-width:1400px; }
+  h1 { font-size:1.35rem; color:var(--hi); margin:4px 0 4px; } h2 { font-size:1.08rem; color:var(--hi); margin:22px 0 8px; }
+  .muted { color:var(--mute); } .small { font-size:0.85rem; }
+  table { border-collapse:collapse; font: 0.85rem/1.4 ui-monospace, "JetBrains Mono", monospace; font-variant-numeric:tabular-nums; }
+  th, td { border:1px solid var(--line); padding:3px 8px; text-align:left; white-space:nowrap; }
+  th { background:var(--panel); position:sticky; top:0; z-index:1; }
+  td.num { text-align:right; }
+  .scroll { overflow:auto; max-height:70vh; border:1px solid var(--line); border-radius:6px; }
+  .scroll table { border:none; }
+  .chip { display:inline-block; padding:0 6px; border-radius:4px; font: 0.75rem/1.6 ui-monospace, monospace; }
+  a.chip { color:#fff; } a.chip.c-hidden { color:var(--fg); }
+  .s-sealed { background:#1f3a5f; color:#79c0ff; } .s-closed { background:#3a2d10; color:#d29922; }
+  .s-open { background:#21262d; color:var(--mute); } .s-broken { background:#4b1818; color:#ff7b72; }
+  td.cell { padding:0; width:26px; text-align:center; }
+  td.cell a { display:block; height:20px; line-height:20px; color:#fff; text-decoration:none; }
+  .c-pass { background:var(--pass); } .c-fail { background:var(--fail); } .c-null { background:#6e7681; }
+  .c-hidden { background: repeating-linear-gradient(45deg, #21262d 0 4px, #161b22 4px 8px); }
+  .cards { display:flex; flex-wrap:wrap; gap:10px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 14px; min-width:200px; max-width:330px; }
+  .card .v { font-size:1.35rem; color:var(--hi); font-weight:600; } .card .l { color:var(--mute); font-size:0.85rem; }
+  .figs { display:grid; grid-template-columns: repeat(auto-fill, minmax(560px, 1fr)); gap:16px; }
+  figure { margin:0; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px; }
+  figure img { width:100%; height:auto; background:#fff; border-radius:4px; }
+  figcaption { margin-top:6px; } figcaption b { color:var(--hi); }
+  .step { border-left:3px solid var(--line); padding:4px 10px; margin:6px 0; background:#11161d; border-radius:0 6px 6px 0; }
+  .step pre { margin:4px 0 0; white-space:pre-wrap; word-break:break-word; font: 0.8rem/1.45 ui-monospace, monospace; color:var(--fg); }
+  .verdict { background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--link); border-radius:6px; padding:10px 14px; max-width:80ch; }
+  select { background:var(--panel); color:var(--fg); border:1px solid var(--line); border-radius:4px; padding:3px 6px; font:inherit; }
+  svg.tl text { fill:var(--fg); font: 10px ui-monospace, monospace; }
+  .legend span { margin-right:12px; white-space:nowrap; } .sw { display:inline-block; width:10px; height:10px; margin-right:4px; border-radius:2px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<header>
+  <b>kaggle-measurement</b>
+  <nav><a href="#/runs" data-tab="runs">runs</a><a href="#/compare" data-tab="compare">compare</a><a href="#/competitions" data-tab="competitions">competitions</a></nav>
+  <span class="muted small" id="status"></span>
+</header>
+<main id="app">loading…</main>
+<script src="/app.js"></script>
+</body>
+</html>

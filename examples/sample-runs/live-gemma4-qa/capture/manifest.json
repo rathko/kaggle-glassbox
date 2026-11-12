@@ -1,0 +1,54 @@
+{
+ "f1923f6a037c": {
+  "exchanges": 2,
+  "seq_first": 1,
+  "seq_last": 2,
+  "instance_guess": null,
+  "task_id": "q1",
+  "instances": [
+   "q1"
+  ],
+  "prompt_head": "What is 17*23?",
+  "raw_bytes": 2793,
+  "gz_bytes": 728
+ },
+ "7473082b24be": {
+  "exchanges": 2,
+  "seq_first": 3,
+  "seq_last": 4,
+  "instance_guess": null,
+  "task_id": "q2",
+  "instances": [
+   "q2"
+  ],
+  "prompt_head": "What is 144/12 + 7?",
+  "raw_bytes": 3868,
+  "gz_bytes": 946
+ },
+ "7e6d17531194": {
+  "exchanges": 2,
+  "seq_first": 5,
+  "seq_last": 6,
+  "instance_guess": null,
+  "task_id": "q3",
+  "instances": [
+   "q3"
+  ],
+  "prompt_head": "What is 2**10 - 24?",
+  "raw_bytes": 2815,
+  "gz_bytes": 736
+ },
+ "c0bb9caa7ca9": {
+  "exchanges": 2,
+  "seq_first": 7,
+  "seq_last": 8,
+  "instance_guess": null,
+  "task_id": "q4",
+  "instances": [
+   "q4"
+  ],
+  "prompt_head": "What is (81-9)*3?",
+  "raw_bytes": 3862,
+  "gz_bytes": 943
+ }
+}

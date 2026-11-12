@@ -40,9 +40,18 @@ git clone https://github.com/rathko/kaggle-measurement && cd kaggle-measurement
 bun install
 bun run demo                       # the whole chain on a mock agent: no GPU, no key
 bun run lb noise --tasks 50 --rate 0.30   # how far two runs drift by pure chance
+bun run dashboard                  # open http://127.0.0.1:8180
 ```
 
 Got a model server? `BASE_URL=http://127.0.0.1:8010 bash examples/live-e2e/run.sh` runs the same chain on real traffic in a few minutes ([details](examples/live-e2e/)).
+
+## See it
+
+![The dashboard: eight runs, their gate state, two repeats of one agent at 5/16 and 10/16, and the run x task matrix](docs/img/dashboard-runs.png)
+
+`bun run dashboard` opens on runs the toolkit produced itself: repeats of one agent, every model call captured, a
+step replay, a fork, and a real Gemma 4 run. Click a cell for the task's steps, compare two runs on the tasks they
+share, or open a competition's figures. A score only shows once the gate has read it. [How it works](docs/guide.md#dashboard).
 
 ## Is your +1 real?
 
@@ -78,7 +87,7 @@ The [full guide](docs/guide.md#using-it-on-your-own-competition) has the exact c
 
 **Start here:** [Full guide](docs/guide.md) · [Quick start](docs/guide.md#quick-start) · [Your competition](docs/guide.md#using-it-on-your-own-competition) · [Live end-to-end example](examples/live-e2e/)
 
-**Tools:** [capture](docs/guide.md#capture) · [replay and fork](docs/guide.md#replay) · [integrity](docs/guide.md#integrity) · [noise floor](docs/guide.md#noise-floor) · [budget](docs/guide.md#budget) · [score quantisation](docs/guide.md#score-quant) · [analysis](docs/guide.md#analysis)
+**Tools:** [dashboard](docs/guide.md#dashboard) · [capture](docs/guide.md#capture) · [replay and fork](docs/guide.md#replay) · [integrity](docs/guide.md#integrity) · [noise floor](docs/guide.md#noise-floor) · [budget](docs/guide.md#budget) · [score quantisation](docs/guide.md#score-quant) · [analysis](docs/guide.md#analysis)
 
 **The paper:** [Gemma 4 SWE-agent data and scripts](competitions/gemma4-swe-agent/) · [Every number, mapped to its script](competitions/gemma4-swe-agent/docs/paper-reproduction.md) · [Docker](docs/guide.md#running-everything-in-docker)
 

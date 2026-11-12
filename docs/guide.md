@@ -25,6 +25,7 @@ bun install
 bun run demo        # the agent path (capture, close the run, replay, sealed read, noise) on a mock Chat Completions agent, no GPU or key
 bun test            # unit and integration tests, offline
 bun run lb help     # the leaderboard noise CLI: noise, compare, paired, rescore, draws, aa, quant
+bun run dashboard   # http://127.0.0.1:8180: the sample runs, step drill-downs, run comparison, the paper figures
 ```
 
 Against a real model: [`examples/live-e2e/`](../examples/live-e2e/) runs a small tool-using agent through the
@@ -295,11 +296,14 @@ src/
                 concordance tables and a constant-baseline comparison
   score-quant/  recovers the integer task count behind a leaderboard score that's been floored
                 or rounded to a fixed number of decimals
+  dashboard/    a local read-only viewer: runs x tasks, per-task steps, replays and forks,
+                paired run comparison, and each competition's figures (see Dashboard below)
   stats/        small supporting statistics: chi-square and F distributions, a seeded PRNG,
                 and the tie-aware draws-per-arm calculation behind `lb draws`
 docs/           architecture diagrams and an example pre-registered-ADR template
 examples/       demo.ts: the core path against a mock model and harness (bun run demo);
-                live-e2e/: the same path against a real OpenAI-compatible server
+                live-e2e/: the same path against a real OpenAI-compatible server;
+                sample-runs/: the runs the dashboard opens on (seven mock, one real Gemma 4)
 test/           integration tests: the capture -> compact -> attribute -> fork chain end to end
 scripts/        repo checks: every markdown link resolves, .dockerignore mirrors .gitignore
 competitions/   one folder per competition the toolkit was used on, each with its own data/,
@@ -308,7 +312,7 @@ competitions/   one folder per competition the toolkit was used on, each with it
 ```
 
 A new competition gets a sibling folder under `competitions/` (its data, the scripts that recompute its
-numbers, and later its dashboard), and keeps using the toolkit at the root unchanged.
+numbers, and a `dashboard.ts` for its page in the dashboard), and keeps using the toolkit at the root unchanged.
 
 Every tool is a standalone `bun` script (or, for `noise-floor` and the `fork-run-steps`/`score-gate`
 libraries, a small module meant to be imported). Paths are CLI arguments or environment variables; the
@@ -764,6 +768,62 @@ your **own** reference fixes (a `.jsonl` of `{ instance_id, patch }` rows, or on
 `--only <id>`); it adds a VS-REFERENCE section, each analysis records which file it read, and the
 synthesis header says so.
 
+## dashboard
+
+```sh
+bun run dashboard                                         # the sample runs, http://127.0.0.1:8180
+bun src/dashboard/serve.ts --results results --port 8181  # your own runs (DASH_PORT also sets the port)
+```
+
+A local, read-only viewer over a results directory in [the run layout](#the-run-layout). One Bun server on
+127.0.0.1, no dependencies, no telemetry; every request reads the files fresh, so a run in flight is current on
+refresh.
+
+![The runs view: every run, its lifecycle state, repeats of one configuration, and the run x task matrix](img/dashboard-runs.png)
+
+- **Runs.** Every run with its state (open, closed, sealed, or changed after its read), its score, how much was
+  captured, and its replays and forks. Runs named `<name>-r1`, `-r2`… are grouped as repeats, with their spread.
+  Below that, the run x task matrix: each cell links to the task.
+- **Task.** The captured model calls in order, with time per call, tokens, each tool call and what the model was
+  answering. Step-replay rows and fork-run screens for the task are listed below, with the task in other runs.
+- **Compare.** Two sealed runs, paired on their shared tasks: the tasks only one of them solved, an exact
+  McNemar p-value, the single-draw noise band, and a plain verdict.
+- **Competitions.** Each `competitions/<name>/dashboard.ts` gets a page: its headline numbers, and its figures
+  drawn live from its data by the same scripts the paper uses.
+
+**It shows a score only after the gate has read it.** The toolkit reads each score once, through the gate, and then
+seals it. A dashboard that printed every run's pass rate would be a second, ungated reader. So a run's pass rate and
+its per-task outcomes appear only when the run has a run-end record that still matches its artifacts, a
+`score-read.json` seal, and rows whose hash matches the sealed one. A run that is open, closed but not read, or
+changed after its read shows its state and its captured steps, never a number. The dashboard never closes,
+repairs or seals a run itself.
+
+**The sample runs** ([`examples/sample-runs/`](../examples/sample-runs/)) are the toolkit's own output: one mock agent
+captured through `wire-tap`, compacted, closed with `run-end` and read with `score-reader`, rebuilt by
+`bun run sample-runs`. `baseline` and `candidate` are the same agent, so every gap between them is noise: two
+baseline repeats land on 5/16 and 10/16. `candidate-r3` is closed but never read and `baseline-r4` is never
+closed, to show what the gate hides. `live-gemma4-qa` is a real run of [`examples/live-e2e/`](../examples/live-e2e/)
+against Gemma 4 31B on vLLM, with a live step replay and a live fork.
+
+**A page for your competition.** Add `competitions/<name>/dashboard.ts` exporting `title`, `summary`,
+`numbers()` (label, value, optional note) and `figures` (`id`, `title`, `caption`, `svg()`). See
+[the Gemma 4 one](../competitions/gemma4-swe-agent/dashboard.ts).
+
+API (JSON, `Cache-Control: no-store`):
+
+| Endpoint | Returns |
+|---|---|
+| `GET /api/runs` | run summaries (state, score or null, capture counts, stack) and repeat groups |
+| `GET /api/matrix` | runs x tasks; a cell is `true`, `false`, `null` (no valid outcome) or `"hidden"` (score not read) |
+| `GET /api/task/<run>/<task>` | captured steps, step replays, forks, the task in other runs |
+| `GET /api/compare/<a>/<b>` | the paired comparison; 404 if either run has no sealed score |
+| `GET /api/competitions`, `GET /api/competition/<name>` | competition list; one page's numbers and figure list |
+| `GET /fig/<name>/<id>.svg` | a figure, drawn on request |
+
+Ids from the URL must be one safe path component; anything else is a 4xx and never a filesystem read. Unknown
+endpoints, runs, tasks, competitions and figures are 404 JSON. An unexpected error is 500 JSON and the server
+keeps serving. The contract is tested in [`src/dashboard/serve.test.ts`](../src/dashboard/serve.test.ts).
+
 ## Testing
 
 ```sh
@@ -805,6 +865,7 @@ integration) at build time, so an image only exists if everything passes.
 docker build -t kaggle-measurement .
 docker run --rm kaggle-measurement                                   # the suite again
 docker run --rm kaggle-measurement bun competitions/gemma4-swe-agent/scripts/reproduce-paper-numbers.ts
+docker run --rm --network host kaggle-measurement bun run dashboard   # loopback only, so share the host network
 # optional: one tiny request through wire-tap to your own OpenAI-compatible server
 docker run --rm --network host -e LIVE_UPSTREAM=http://127.0.0.1:8010 kaggle-measurement bun test test/integration
 ```

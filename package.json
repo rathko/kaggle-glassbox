@@ -29,7 +29,9 @@
     "typecheck": "bunx tsc --noEmit -p .",
     "demo": "bun examples/demo.ts",
     "lb": "bun src/cli/leaderboard.ts",
-    "paper-numbers": "bun competitions/gemma4-swe-agent/scripts/reproduce-paper-numbers.ts"
+    "paper-numbers": "bun competitions/gemma4-swe-agent/scripts/reproduce-paper-numbers.ts",
+    "dashboard": "bun src/dashboard/serve.ts",
+    "sample-runs": "bun examples/sample-runs/generate.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",

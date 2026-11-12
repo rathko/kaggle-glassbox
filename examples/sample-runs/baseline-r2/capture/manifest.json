@@ -1,0 +1,210 @@
+{
+ "4ba56fd318b5": {
+  "exchanges": 7,
+  "seq_first": 1,
+  "seq_last": 7,
+  "instance_guess": null,
+  "task_id": "task-01",
+  "instances": [
+   "task-01"
+  ],
+  "prompt_head": "Fix the bug described in task-01.",
+  "raw_bytes": 12523,
+  "gz_bytes": 919
+ },
+ "fde3da122489": {
+  "exchanges": 9,
+  "seq_first": 8,
+  "seq_last": 16,
+  "instance_guess": null,
+  "task_id": "task-02",
+  "instances": [
+   "task-02"
+  ],
+  "prompt_head": "Fix the bug described in task-02.",
+  "raw_bytes": 18322,
+  "gz_bytes": 1041
+ },
+ "7e33a4507c74": {
+  "exchanges": 5,
+  "seq_first": 17,
+  "seq_last": 21,
+  "instance_guess": null,
+  "task_id": "task-03",
+  "instances": [
+   "task-03"
+  ],
+  "prompt_head": "Fix the bug described in task-03.",
+  "raw_bytes": 7751,
+  "gz_bytes": 778
+ },
+ "5419c7dd694e": {
+  "exchanges": 6,
+  "seq_first": 22,
+  "seq_last": 27,
+  "instance_guess": null,
+  "task_id": "task-04",
+  "instances": [
+   "task-04"
+  ],
+  "prompt_head": "Fix the bug described in task-04.",
+  "raw_bytes": 10306,
+  "gz_bytes": 857
+ },
+ "c7ab03638f9b": {
+  "exchanges": 4,
+  "seq_first": 28,
+  "seq_last": 31,
+  "instance_guess": null,
+  "task_id": "task-05",
+  "instances": [
+   "task-05"
+  ],
+  "prompt_head": "Fix the bug described in task-05.",
+  "raw_bytes": 5767,
+  "gz_bytes": 693
+ },
+ "be9a8803d82c": {
+  "exchanges": 5,
+  "seq_first": 32,
+  "seq_last": 36,
+  "instance_guess": null,
+  "task_id": "task-06",
+  "instances": [
+   "task-06"
+  ],
+  "prompt_head": "Fix the bug described in task-06.",
+  "raw_bytes": 7988,
+  "gz_bytes": 756
+ },
+ "a091bdab9cb2": {
+  "exchanges": 6,
+  "seq_first": 37,
+  "seq_last": 42,
+  "instance_guess": null,
+  "task_id": "task-07",
+  "instances": [
+   "task-07"
+  ],
+  "prompt_head": "Fix the bug described in task-07.",
+  "raw_bytes": 10282,
+  "gz_bytes": 833
+ },
+ "e91f4108b62d": {
+  "exchanges": 7,
+  "seq_first": 43,
+  "seq_last": 49,
+  "instance_guess": null,
+  "task_id": "task-08",
+  "instances": [
+   "task-08"
+  ],
+  "prompt_head": "Fix the bug described in task-08.",
+  "raw_bytes": 12934,
+  "gz_bytes": 905
+ },
+ "97a539f31024": {
+  "exchanges": 6,
+  "seq_first": 50,
+  "seq_last": 55,
+  "instance_guess": null,
+  "task_id": "task-09",
+  "instances": [
+   "task-09"
+  ],
+  "prompt_head": "Fix the bug described in task-09.",
+  "raw_bytes": 10151,
+  "gz_bytes": 834
+ },
+ "68d57a032abf": {
+  "exchanges": 4,
+  "seq_first": 56,
+  "seq_last": 59,
+  "instance_guess": null,
+  "task_id": "task-10",
+  "instances": [
+   "task-10"
+  ],
+  "prompt_head": "Fix the bug described in task-10.",
+  "raw_bytes": 5740,
+  "gz_bytes": 717
+ },
+ "f9db1886be73": {
+  "exchanges": 5,
+  "seq_first": 60,
+  "seq_last": 64,
+  "instance_guess": null,
+  "task_id": "task-11",
+  "instances": [
+   "task-11"
+  ],
+  "prompt_head": "Fix the bug described in task-11.",
+  "raw_bytes": 7877,
+  "gz_bytes": 757
+ },
+ "446cd8b6d53d": {
+  "exchanges": 8,
+  "seq_first": 65,
+  "seq_last": 72,
+  "instance_guess": null,
+  "task_id": "task-12",
+  "instances": [
+   "task-12"
+  ],
+  "prompt_head": "Fix the bug described in task-12.",
+  "raw_bytes": 15526,
+  "gz_bytes": 987
+ },
+ "9f84fc542597": {
+  "exchanges": 9,
+  "seq_first": 73,
+  "seq_last": 81,
+  "instance_guess": null,
+  "task_id": "task-13",
+  "instances": [
+   "task-13"
+  ],
+  "prompt_head": "Fix the bug described in task-13.",
+  "raw_bytes": 18560,
+  "gz_bytes": 1036
+ },
+ "94b7f4511a82": {
+  "exchanges": 9,
+  "seq_first": 82,
+  "seq_last": 90,
+  "instance_guess": null,
+  "task_id": "task-14",
+  "instances": [
+   "task-14"
+  ],
+  "prompt_head": "Fix the bug described in task-14.",
+  "raw_bytes": 18822,
+  "gz_bytes": 1045
+ },
+ "18affaf6244f": {
+  "exchanges": 4,
+  "seq_first": 91,
+  "seq_last": 94,
+  "instance_guess": null,
+  "task_id": "task-15",
+  "instances": [
+   "task-15"
+  ],
+  "prompt_head": "Fix the bug described in task-15.",
+  "raw_bytes": 5710,
+  "gz_bytes": 716
+ },
+ "251e6949b52e": {
+  "exchanges": 7,
+  "seq_first": 95,
+  "seq_last": 101,
+  "instance_guess": null,
+  "task_id": "task-16",
+  "instances": [
+   "task-16"
+  ],
+  "prompt_head": "Fix the bug described in task-16.",
+  "raw_bytes": 12679,
+  "gz_bytes": 929
+ }
+}

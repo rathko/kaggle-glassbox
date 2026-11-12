@@ -1,0 +1,20 @@
+{
+ "at": "2026-11-12T09:47:44.396Z",
+ "artifact_hash": "5803b92738a90d9f038473c8d26aa16eb247744ea3f46478d7bc28e1b0bfde6e",
+ "attribution_hash": "2350603cd0c087a76b59719e544fb796dd8459673d421e1553dcf3ed3f21b2a7",
+ "artifact_only": false,
+ "checks": {
+  "rows": {
+   "ok": true,
+   "detail": ""
+  },
+  "stack": {
+   "ok": true,
+   "detail": ""
+  },
+  "capture": {
+   "ok": true,
+   "detail": ""
+  }
+ }
+}
