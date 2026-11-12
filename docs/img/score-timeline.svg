@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" font-family="Helvetica, Arial, sans-serif" font-size="12">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="622.2857142857143" y="145.77880621548792" width="257.71428571428567" height="51.94238756902425" fill="#3B82F6" opacity="0.12"/>
+<line x1="622.2857142857143" x2="880" y1="171.75000000000006" y2="171.75000000000006" stroke="#3B82F6" stroke-dasharray="4 3"/>
+<text x="652.2857142857143" y="215.72119378451217" fill="#1e40af">mean ± 1 measured re-score SD</text>
+<line x1="60" x2="880" y1="350" y2="350" stroke="#e5e7eb"/>
+<text x="52" y="354" text-anchor="end" fill="#374151">0.00</text>
+<line x1="60" x2="880" y1="298.3333333333333" y2="298.3333333333333" stroke="#e5e7eb"/>
+<text x="52" y="302.3333333333333" text-anchor="end" fill="#374151">0.05</text>
+<line x1="60" x2="880" y1="246.66666666666666" y2="246.66666666666666" stroke="#e5e7eb"/>
+<text x="52" y="250.66666666666666" text-anchor="end" fill="#374151">0.10</text>
+<line x1="60" x2="880" y1="195" y2="195" stroke="#e5e7eb"/>
+<text x="52" y="199" text-anchor="end" fill="#374151">0.15</text>
+<line x1="60" x2="880" y1="143.33333333333331" y2="143.33333333333331" stroke="#e5e7eb"/>
+<text x="52" y="147.33333333333331" text-anchor="end" fill="#374151">0.20</text>
+<line x1="60" x2="880" y1="91.66666666666666" y2="91.66666666666666" stroke="#e5e7eb"/>
+<text x="52" y="95.66666666666666" text-anchor="end" fill="#374151">0.25</text>
+<line x1="60" x2="880" y1="40" y2="40" stroke="#e5e7eb"/>
+<text x="52" y="44" text-anchor="end" fill="#374151">0.30</text>
+<path d="M60,226 Q118.57142857142857,70.99999999999996 177.14285714285714,267.33333333333337" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+<path d="M270.8571428571429,246.66666666666666 Q282.57142857142856,70.99999999999996 294.2857142857143,288" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+<path d="M364.57142857142856,288 Q388,70.99999999999996 411.42857142857144,226" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+<path d="M552,267.33333333333337 Q563.7142857142858,70.99999999999996 575.4285714285714,267.33333333333337" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="60" cy="226" r="4.5" fill="#6b7280"/>
+<text x="60" y="366" transform="rotate(60 60 366)" fill="#374151" font-size="10">V01</text>
+<circle cx="83.42857142857143" cy="298.3333333333333" r="4.5" fill="#6b7280"/>
+<text x="83.42857142857143" y="366" transform="rotate(60 83.42857142857143 366)" fill="#374151" font-size="10">V02</text>
+<circle cx="106.85714285714286" cy="298.3333333333333" r="4.5" fill="#6b7280"/>
+<text x="106.85714285714286" y="366" transform="rotate(60 106.85714285714286 366)" fill="#374151" font-size="10">V03</text>
+<circle cx="130.28571428571428" cy="298.3333333333333" r="4.5" fill="#6b7280"/>
+<text x="130.28571428571428" y="366" transform="rotate(60 130.28571428571428 366)" fill="#374151" font-size="10">V04</text>
+<circle cx="153.71428571428572" cy="288" r="4.5" fill="#6b7280"/>
+<text x="153.71428571428572" y="366" transform="rotate(60 153.71428571428572 366)" fill="#374151" font-size="10">V05</text>
+<circle cx="177.14285714285714" cy="267.33333333333337" r="4.5" fill="#6b7280"/>
+<text x="177.14285714285714" y="366" transform="rotate(60 177.14285714285714 366)" fill="#374151" font-size="10">V01</text>
+<circle cx="200.57142857142858" cy="267.33333333333337" r="4.5" fill="#6b7280"/>
+<text x="200.57142857142858" y="366" transform="rotate(60 200.57142857142858 366)" fill="#374151" font-size="10">V06</text>
+<circle cx="224" cy="288" r="4.5" fill="#6b7280"/>
+<text x="224" y="366" transform="rotate(60 224 366)" fill="#374151" font-size="10">V07</text>
+<circle cx="247.42857142857142" cy="226" r="4.5" fill="#6b7280"/>
+<text x="247.42857142857142" y="366" transform="rotate(60 247.42857142857142 366)" fill="#374151" font-size="10">V08</text>
+<circle cx="270.8571428571429" cy="246.66666666666666" r="4.5" fill="#6b7280"/>
+<text x="270.8571428571429" y="366" transform="rotate(60 270.8571428571429 366)" fill="#374151" font-size="10">V09</text>
+<circle cx="294.2857142857143" cy="288" r="4.5" fill="#6b7280"/>
+<text x="294.2857142857143" y="366" transform="rotate(60 294.2857142857143 366)" fill="#374151" font-size="10">V09</text>
+<circle cx="317.7142857142857" cy="288" r="4.5" fill="#6b7280"/>
+<text x="317.7142857142857" y="366" transform="rotate(60 317.7142857142857 366)" fill="#374151" font-size="10">V10</text>
+<circle cx="341.14285714285717" cy="267.33333333333337" r="4.5" fill="#6b7280"/>
+<text x="341.14285714285717" y="366" transform="rotate(60 341.14285714285717 366)" fill="#374151" font-size="10">V11</text>
+<circle cx="364.57142857142856" cy="288" r="4.5" fill="#6b7280"/>
+<text x="364.57142857142856" y="366" transform="rotate(60 364.57142857142856 366)" fill="#374151" font-size="10">V12</text>
+<circle cx="388" cy="288" r="4.5" fill="#6b7280"/>
+<text x="388" y="366" transform="rotate(60 388 366)" fill="#374151" font-size="10">V13</text>
+<circle cx="411.42857142857144" cy="226" r="4.5" fill="#6b7280"/>
+<text x="411.42857142857144" y="366" transform="rotate(60 411.42857142857144 366)" fill="#374151" font-size="10">V12</text>
+<circle cx="434.85714285714283" cy="298.3333333333333" r="4.5" fill="#6b7280"/>
+<text x="434.85714285714283" y="366" transform="rotate(60 434.85714285714283 366)" fill="#374151" font-size="10">V14</text>
+<circle cx="458.2857142857143" cy="319" r="4.5" fill="#6b7280"/>
+<text x="458.2857142857143" y="366" transform="rotate(60 458.2857142857143 366)" fill="#374151" font-size="10">V15</text>
+<circle cx="481.7142857142857" cy="339.6666666666667" r="4.5" fill="#6b7280"/>
+<text x="481.7142857142857" y="366" transform="rotate(60 481.7142857142857 366)" fill="#374151" font-size="10">V16</text>
+<circle cx="505.14285714285717" cy="288" r="4.5" fill="#6b7280"/>
+<text x="505.14285714285717" y="366" transform="rotate(60 505.14285714285717 366)" fill="#374151" font-size="10">V17</text>
+<circle cx="528.5714285714286" cy="319" r="4.5" fill="#6b7280"/>
+<text x="528.5714285714286" y="366" transform="rotate(60 528.5714285714286 366)" fill="#374151" font-size="10">V18</text>
+<circle cx="552" cy="267.33333333333337" r="4.5" fill="#6b7280"/>
+<text x="552" y="366" transform="rotate(60 552 366)" fill="#374151" font-size="10">V19</text>
+<circle cx="575.4285714285714" cy="267.33333333333337" r="4.5" fill="#6b7280"/>
+<text x="575.4285714285714" y="366" transform="rotate(60 575.4285714285714 366)" fill="#374151" font-size="10">V19</text>
+<circle cx="598.8571428571429" cy="350" r="4.5" fill="#6b7280"/>
+<text x="598.8571428571429" y="366" transform="rotate(60 598.8571428571429 366)" fill="#374151" font-size="10">V20*</text>
+<circle cx="622.2857142857143" cy="215.66666666666666" r="4.5" fill="#1d4ed8"/>
+<text x="622.2857142857143" y="366" transform="rotate(60 622.2857142857143 366)" fill="#374151" font-size="10">V21</text>
+<circle cx="645.7142857142857" cy="174.33333333333331" r="4.5" fill="#1d4ed8"/>
+<text x="645.7142857142857" y="366" transform="rotate(60 645.7142857142857 366)" fill="#374151" font-size="10">V22</text>
+<circle cx="669.1428571428571" cy="164" r="4.5" fill="#1d4ed8"/>
+<text x="669.1428571428571" y="366" transform="rotate(60 669.1428571428571 366)" fill="#374151" font-size="10">V23</text>
+<circle cx="692.5714285714286" cy="174.33333333333331" r="4.5" fill="#1d4ed8"/>
+<text x="692.5714285714286" y="366" transform="rotate(60 692.5714285714286 366)" fill="#374151" font-size="10">V24</text>
+<circle cx="716" cy="195" r="4.5" fill="#1d4ed8"/>
+<text x="716" y="366" transform="rotate(60 716 366)" fill="#374151" font-size="10">V25</text>
+<circle cx="739.4285714285714" cy="164" r="4.5" fill="#1d4ed8"/>
+<text x="739.4285714285714" y="366" transform="rotate(60 739.4285714285714 366)" fill="#374151" font-size="10">V26</text>
+<circle cx="762.8571428571429" cy="174.33333333333331" r="4.5" fill="#1d4ed8"/>
+<text x="762.8571428571429" y="366" transform="rotate(60 762.8571428571429 366)" fill="#374151" font-size="10">V27</text>
+<circle cx="786.2857142857143" cy="164" r="4.5" fill="#1d4ed8"/>
+<text x="786.2857142857143" y="366" transform="rotate(60 786.2857142857143 366)" fill="#374151" font-size="10">V28</text>
+<circle cx="809.7142857142857" cy="164" r="4.5" fill="#1d4ed8"/>
+<text x="809.7142857142857" y="366" transform="rotate(60 809.7142857142857 366)" fill="#374151" font-size="10">V29</text>
+<circle cx="833.1428571428571" cy="195" r="4.5" fill="#1d4ed8"/>
+<text x="833.1428571428571" y="366" transform="rotate(60 833.1428571428571 366)" fill="#374151" font-size="10">V30</text>
+<circle cx="856.5714285714286" cy="174.33333333333331" r="4.5" fill="#1d4ed8"/>
+<text x="856.5714285714286" y="366" transform="rotate(60 856.5714285714286 366)" fill="#374151" font-size="10">V31</text>
+<circle cx="880" cy="101.99999999999999" r="4.5" fill="#1d4ed8"/>
+<text x="880" y="366" transform="rotate(60 880 366)" fill="#374151" font-size="10">V32</text>
+<text x="60" y="22" font-size="15" font-weight="bold">Public score per upload (36 scored uploads, 09-25 to 11-10)</text>
+<text x="880" y="22" text-anchor="end" fill="#dc2626">red arcs: identical bytes uploaded twice</text>
+<text x="880" y="36" text-anchor="end" fill="#6b7280">grey: own lineage · blue: public base + changes · *deliberate canary</text>
+</svg>

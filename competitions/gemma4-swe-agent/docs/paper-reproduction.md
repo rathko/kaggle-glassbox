@@ -2,7 +2,7 @@
 
 This is the campaign-specific half of the repository: what these instruments measured in one real Kaggle
 coding-agent competition, the anonymised data behind the paper "Two Old GPUs and a Glass Box", and which
-script recomputes which number. The tools themselves are documented in the [repository README](../../../README.md). Paths below are relative
+script recomputes which number. The tools themselves are documented in the [full guide](../../../docs/guide.md). Paths below are relative
 to this competition's folder (`competitions/gemma4-swe-agent/`), except `src/` and `test/`, which are the toolkit
 at the repository root; run the commands from the repository root.
 
@@ -199,4 +199,4 @@ and model-routing calls were either deleted or turned into flags and parameters.
   "confirmed" verdict is never assigned by a machine) are kept and explained from first principles.
 - **Frontier analysis** (`analysis/`): one plain HTTP call to any OpenAI-compatible endpoint with no
   default host; no reference patch is read unless you supply one; campaign context is an optional
-  `--context-file`. Its prompts are written for coding tasks; see the README.
+  `--context-file`. Its prompts are written for coding tasks; see the [full guide](../../../docs/guide.md).
