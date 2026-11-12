@@ -47,9 +47,9 @@ Got a model server? `BASE_URL=http://127.0.0.1:8010 bash examples/live-e2e/run.s
 
 ## See it
 
-![The dashboard: eight runs, their gate state, two repeats of one agent at 5/16 and 10/16, and the run x task matrix](docs/img/dashboard-runs.png)
+![The dashboard: nine runs, their gate state, two repeats of one agent at 5/16 and 10/16, and the run x task matrix](docs/img/dashboard-runs.png)
 
-`bun run dashboard` opens on runs the toolkit produced itself: repeats of one agent, every model call captured, a
+**[Click around the live demo](https://rathko.github.io/kaggle-glassbox/)**, or run `bun run dashboard`. It opens on runs the toolkit produced itself: repeats of one agent, every model call captured, a
 step replay, a fork, and a real Gemma 4 run. Click a cell for the task's steps, compare two runs on the tasks they
 share, or open a competition's figures. A score only shows once the gate has read it. [How it works](docs/guide.md#dashboard).
 

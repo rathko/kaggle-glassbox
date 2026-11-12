@@ -42,7 +42,7 @@ async function competition(root: string, name: string): Promise<CompetitionDashb
 const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { "Cache-Control": "no-store" } });
 
 let clientJs: Promise<string> | null = null;
-async function buildClient(): Promise<string> {
+export async function buildClient(): Promise<string> {
   const built = await Bun.build({ entrypoints: [join(import.meta.dir, "client.ts")], target: "browser", format: "iife", minify: false });
   if (!built.success) throw new Error(built.logs.map(String).join("\n"));
   return built.outputs[0]!.text();

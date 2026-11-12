@@ -14,6 +14,8 @@
 //   <run>/capture/manifest.json + task-<hash>.jsonl.gz              the compacted capture, one file per task
 //   <run>/replay*.jsonl, screen*.jsonl  step-replay output (optional)
 //   <run>/forks/fork-runs.jsonl         fork-run ledger (optional; fork rollouts in <run>/forks/fork-*/)
+//   <run>/structure/<task>.json         STRUCTURE-ONLY trace (optional, instead of a capture): the shape of a run whose
+//                                       text cannot be published. See structureOf() below.
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -86,6 +88,53 @@ export function runStatus(dir: string): RunStatus {
   return { ...base, state: "sealed", detail: "read through the gate and sealed" };
 }
 
+// ---- structure-only traces ----------------------------------------------------------------------------------------
+// Some runs can be shown only as SHAPE: a campaign's real tasks, where the prompts, task text, model output and tool
+// results stay private. Such a run carries <run>/structure/<task>.json instead of a capture: per step, who acted,
+// the tool NAME, timing, token counts, context growth and the observation SIZE, plus malfunction kinds and the
+// first edit. No text at all; the dashboard labels every step "text withheld". Example: examples/sample-runs/D176-sample.
+export interface StructureStep {
+  step: number; source: string; kind: string; tool: string | null;
+  atS: number | null; durS: number | null;
+  promptTokens: number | null; promptDelta: number | null; completionTokens: number | null;
+  obsChars: number | null; repeated: boolean;
+}
+export interface StructureTrace {
+  task: string; outcome: string | null; stop: string | null; wallS: number | null;
+  firstEdit: { atS: number | null; step: number } | null;
+  malfunctions: { kind: string; steps: number[] }[];
+  steps: StructureStep[];
+}
+const num = (x: unknown): number | null => (typeof x === "number" && Number.isFinite(x) ? x : null);
+const word = (x: unknown): string | null => (typeof x === "string" ? x.slice(0, 40) : null);
+
+export function structureTasks(dir: string): string[] {
+  const d = join(dir, "structure");
+  return existsSync(d) ? readdirSync(d).filter((f) => f.endsWith(".json") && isSafeId(f.slice(0, -5))).map((f) => f.slice(0, -5)).sort() : [];
+}
+
+/** A task's structure-only trace, re-typed field by field, so a crafted file cannot carry text onto the page. */
+export function structureOf(dir: string, task: string): StructureTrace | null {
+  if (!isSafeId(task)) return null;
+  const j = readJson(join(dir, "structure", `${task}.json`));
+  if (!j || !Array.isArray(j.steps)) return null;
+  const fe = j.firstEdit && num(j.firstEdit.step) !== null ? { atS: num(j.firstEdit.atS), step: num(j.firstEdit.step)! } : null;
+  return {
+    task, outcome: word(j.outcome), stop: word(j.stop), wallS: num(j.wallS), firstEdit: fe,
+    malfunctions: (Array.isArray(j.malfunctions) ? j.malfunctions : []).map((m: any) => ({
+      kind: word(m?.kind) ?? "?",
+      steps: (Array.isArray(m?.steps) ? m.steps : []).map(num).filter((x: number | null): x is number => x !== null),
+    })),
+    steps: j.steps.map((st: any, i: number) => ({
+      step: num(st?.step) ?? i + 1, source: word(st?.source) ?? "", kind: word(st?.kind) ?? "", tool: word(st?.tool),
+      atS: num(st?.atS), durS: num(st?.durS), promptTokens: num(st?.promptTokens), promptDelta: num(st?.promptDelta),
+      completionTokens: num(st?.completionTokens), obsChars: num(st?.obsChars), repeated: st?.repeated === true,
+    })),
+  };
+}
+const structureCalls = (dir: string): number =>
+  structureTasks(dir).reduce((sum, t) => sum + (structureOf(dir, t)?.steps.filter((x) => x.completionTokens !== null).length ?? 0), 0);
+
 export interface RunSummary {
   run: string;
   status: RunStatus;
@@ -129,7 +178,7 @@ export function runSummary(root: string, run: string): RunSummary {
     run, status, tasks: new Set(rows.map(taskIdOf).filter(Boolean)).size,
     passed, rate: o && o.size ? passed! / o.size : null,
     stack: readJson(join(dir, "stack.json")),
-    capturedTasks: man.length, exchanges: man.reduce((s, m) => s + (m.exchanges ?? 0), 0),
+    capturedTasks: man.length + structureTasks(dir).length, exchanges: man.reduce((s, m) => s + (m.exchanges ?? 0), 0) + structureCalls(dir),
     replays: replayFiles(dir).reduce((s, f) => s + readJsonl(join(dir, f)).length, 0),
     forks: readJsonl(join(dir, "forks", "fork-runs.jsonl")).length,
     updatedAt: statSync(join(dir, "task_results.jsonl")).mtimeMs,
@@ -147,7 +196,7 @@ export function matrix(root: string): Matrix {
   const cells = new Map<string, Matrix["tasks"][number]["cells"]>();
   for (const s of runs) {
     const dir = join(root, s.run), o = outcomes(dir, s.status);
-    const captured = new Set(Object.values(manifestOf(dir)).flatMap((m) => [m.task_id, ...(m.instances ?? [])]).filter(Boolean) as string[]);
+    const captured = new Set([...Object.values(manifestOf(dir)).flatMap((m) => [m.task_id, ...(m.instances ?? [])]).filter(Boolean) as string[], ...structureTasks(dir)]);
     for (const r of readJsonl(join(dir, "task_results.jsonl"))) {
       const id = taskIdOf(r);
       if (!id) continue;
@@ -232,7 +281,7 @@ export function taskView(root: string, run: string, task: string) {
     const d = join(root, r), oo = outcomes(d);
     return readJsonl(join(d, "task_results.jsonl")).some((x) => taskIdOf(x) === task) ? [{ run: r, outcome: oo ? (oo.get(task) ?? null) : "hidden" }] : [];
   });
-  return { run, task, state: status.state, outcome: o ? (o.get(task) ?? null) : "hidden", steps, replays: replays(dir, new Set(steps.map((s) => s.seq))), forks: forks(dir, task), otherRuns: others };
+  return { run, task, state: status.state, outcome: o ? (o.get(task) ?? null) : "hidden", steps, structure: structureOf(dir, task), replays: replays(dir, new Set(steps.map((s) => s.seq))), forks: forks(dir, task), otherRuns: others };
 }
 
 export interface Comparison {

@@ -13,10 +13,13 @@ const num = (x: unknown, d = 0) => (x !== null && x !== undefined && x !== "" &&
 const pct = (x: unknown) => (x === null || x === undefined || !Number.isFinite(Number(x)) ? "–" : `${(100 * Number(x)).toFixed(1)}%`);
 const href = (...parts: string[]) => `#/${parts.map(encodeURIComponent).join("/")}`;
 
+// STATIC: the hosted demo (bun run dashboard:export) has no server; every API answer is a pre-rendered file
+// <path>.json next to index.html. Paths are relative, so the page works at / and under a subpath (GitHub Pages).
+const STATIC = g.document?.body?.dataset?.static === "1";
 async function api(path: string): Promise<any> {
-  const r = await fetch(path, { cache: "no-store" });
+  const r = await fetch(STATIC ? `${path}.json` : path, { cache: "no-store" });
   const body: any = await r.json().catch(() => ({ error: `HTTP ${r.status}` }));
-  if (!r.ok) throw new Error(body.error ?? `HTTP ${r.status}`);
+  if (!r.ok || body?.error) throw new Error(body?.error ?? `HTTP ${r.status}`);
   return body;
 }
 
@@ -32,7 +35,7 @@ function cellTitle(o: unknown): string {
 
 // ---- runs: summary, repeat groups, run x task matrix --------------------------------------------------------------
 async function viewRuns(): Promise<string> {
-  const [runs, m] = await Promise.all([api("/api/runs"), api("/api/matrix")]);
+  const [runs, m] = await Promise.all([api("api/runs"), api("api/matrix")]);
   const rs: any[] = runs.runs;
   if (!rs.length) return `<h1>No runs</h1><p class="muted">No run directories with a task_results.jsonl under ${esc(runs.results)}.</p>`;
   const sealed = rs.filter((r) => r.status.state === "sealed");
@@ -89,8 +92,41 @@ function timeline(steps: any[]): string {
   return `<svg class="tl" width="100%" viewBox="0 0 ${W} ${H}" role="img" aria-label="time per model call">${bars}<text x="${L}" y="${H - 4}">0</text><text x="${W - 10}" y="${H - 4}" text-anchor="end">${esc(num(end / 1000, 2))} s</text></svg>`;
 }
 
+// A structure-only task (data.ts structureOf): the shape of a real run whose text stays private.
+function viewStructure(t: any, run: string, task: string, outcome: string, others: string): string {
+  const x = t.structure, steps: any[] = x.steps;
+  const name = (s: any) => s.tool ?? s.kind ?? "other";
+  const calls = steps.filter((s) => s.completionTokens !== null);
+  const flagged = new Map<number, string[]>();
+  for (const m of x.malfunctions) for (const st of m.steps) flagged.set(Number(st), [...(flagged.get(Number(st)) ?? []), String(m.kind)]);
+  const timed = steps.filter((s) => s.atS !== null);
+  const end = Math.max(...timed.map((s) => Number(s.atS) + Number(s.durS ?? 0)), 1);
+  const W = 900, rowH = 9, L = 40, H = timed.length * rowH + 22;
+  const xs = (sec: number) => L + (sec / end) * (W - L - 10);
+  const bars = timed.map((s, i) => {
+    const x0 = xs(Number(s.atS)), w = Math.max(2, xs(Number(s.atS) + Number(s.durS ?? 0)) - x0);
+    return `<rect x="${num(x0, 1)}" y="${i * rowH + 2}" width="${num(w, 1)}" height="${rowH - 3}" rx="1" fill="${colourOf(name(s))}"><title>${esc(`#${s.step} ${name(s)} · ${num(s.durS, 1)} s`)}</title></rect>`;
+  }).join("");
+  const tl = timed.length ? `<svg class="tl" width="100%" viewBox="0 0 ${W} ${H}" role="img" aria-label="time per step">${bars}<text x="${L}" y="${H - 4}">0</text><text x="${W - 10}" y="${H - 4}" text-anchor="end">${esc(num(end, 0))} s</text></svg>` : "";
+  const names = [...new Set(steps.map(name))];
+  const legend = `<p class="legend small">${names.map((n) => `<span><i class="sw" style="background:${colourOf(n)}"></i>${esc(n)}</span>`).join("")}</p>`;
+  const mf = x.malfunctions.length ? `<h2>Malfunctions</h2><p>${x.malfunctions.map((m: any) => `<span class="chip s-broken">${esc(m.kind)}</span> <span class="muted small">steps ${esc(m.steps.join(", "))}</span>`).join("<br>")}</p>` : "";
+  const rows = steps.map((s) => `<tr${s.repeated || flagged.has(Number(s.step)) ? ` class="flag"` : ""}><td class="num">${esc(num(s.step))}</td><td>${esc(s.source)} · ${esc(s.kind)}</td>
+    <td><i class="sw" style="background:${colourOf(name(s))}"></i>${esc(s.tool ?? "")}</td><td class="num">${s.atS === null ? "–" : `${num(s.atS, 1)} s`}</td><td class="num">${s.durS === null ? "–" : `${num(s.durS, 1)} s`}</td>
+    <td class="num">${esc(num(s.promptTokens))}${s.promptDelta !== null ? ` <span class="muted">(${Number(s.promptDelta) < 0 ? "−" : "+"}${esc(num(Math.abs(Number(s.promptDelta))))})</span>` : ""}</td><td class="num">${esc(num(s.completionTokens))}</td><td class="num">${esc(num(s.obsChars))}</td>
+    <td>${s.repeated ? `<span class="chip s-closed">repeat</span> ` : ""}${(flagged.get(Number(s.step)) ?? []).map((k) => `<span class="chip s-broken">${esc(k)}</span>`).join(" ")}</td><td class="muted small">text withheld</td></tr>`).join("");
+  return `<p class="small"><a href="#/runs">← runs</a></p><h1>${esc(task)} <span class="muted">in</span> ${esc(run)} ${outcome} <span class="chip s-open">${esc(x.outcome ?? "")} · ${esc(x.stop ?? "")}</span></h1>
+    <div class="note">Structure only. This is a real task from the campaign: the prompts, task text, model output and tool results stay private, so every step shows its shape and its text is withheld.</div>
+    <div class="cards"><div class="card"><div class="v">${num(steps.length)}</div><div class="l">steps, ${num(calls.length)} model calls</div></div>
+    <div class="card"><div class="v">${num(calls.reduce((a, s) => a + Number(s.completionTokens || 0), 0))}</div><div class="l">completion tokens</div></div>
+    <div class="card"><div class="v">${x.wallS === null ? "–" : `${num(x.wallS, 0)} s`}</div><div class="l">wall time · stop: ${esc(x.stop ?? "–")}</div></div>
+    <div class="card"><div class="v">${x.firstEdit ? `step ${num(x.firstEdit.step)}` : "never"}</div><div class="l">${x.firstEdit ? `first edit, at ${num(x.firstEdit.atS, 1)} s` : "the agent never edited a file"}</div></div></div>
+    ${mf}<h2>Time per step</h2>${legend}${tl}<h2>Steps</h2>
+    <div class="scroll"><table><tr><th>#</th><th>who</th><th>tool</th><th>at</th><th>took</th><th>prompt tokens</th><th>completion</th><th>result chars</th><th>flags</th><th></th></tr>${rows}</table></div>${others}`;
+}
+
 async function viewTask(run: string, task: string): Promise<string> {
-  const t = await api(`/api/task/${encodeURIComponent(run)}/${encodeURIComponent(task)}`);
+  const t = await api(`api/task/${encodeURIComponent(run)}/${encodeURIComponent(task)}`);
   const outcome = t.outcome === "hidden" ? `<span class="chip s-closed">score not read</span>` : t.outcome === true ? `<span class="chip c-pass">passed</span>` : t.outcome === false ? `<span class="chip c-fail">failed</span>` : `<span class="chip s-open">no outcome</span>`;
   const steps: any[] = t.steps;
   const toks = steps.some((x) => x.completionTokens !== null) ? steps.reduce((s, x) => s + Number(x.completionTokens || 0), 0) : null; // streamed answers may carry no usage
@@ -105,6 +141,7 @@ async function viewTask(run: string, task: string): Promise<string> {
   const forks = t.forks.length ? `<h2>Fork screens</h2><p class="muted small">The task replayed exactly up to a step, then continued live N times (fork-run).</p>
     <table><tr><th>tag</th><th>fork after</th><th>rollouts</th><th>valid</th><th>resolved</th><th>rate</th><th>divergent</th></tr>${t.forks.map((f: any) => `<tr><td>${esc(f.tag)}</td><td class="num">${esc(num(f.fork))}</td><td class="num">${esc(num(f.n))}</td><td class="num">${esc(num(f.valid))}</td><td class="num">${esc(num(f.resolved))}</td><td class="num">${pct(f.rate)}</td><td class="num">${esc(num(f.divergent))}</td></tr>`).join("")}</table>` : "";
   const others = t.otherRuns.length ? `<h2>This task in other runs</h2><p>${t.otherRuns.map((o: any) => `<a class="chip ${cellClass(o.outcome)}" href="${href("task", o.run, task)}" title="${esc(cellTitle(o.outcome))}">${esc(o.run)}</a>`).join(" ")}</p>` : "";
+  if (t.structure && !steps.length) return viewStructure(t, run, task, outcome, others);
   return `<p class="small"><a href="#/runs">← runs</a></p><h1>${esc(task)} <span class="muted">in</span> ${esc(run)} ${outcome}</h1>
     <div class="cards"><div class="card"><div class="v">${num(steps.length)}</div><div class="l">model calls captured</div></div>
     <div class="card"><div class="v">${num(toks)}</div><div class="l">completion tokens</div></div>
@@ -114,13 +151,13 @@ async function viewTask(run: string, task: string): Promise<string> {
 
 // ---- compare two sealed runs ----------------------------------------------------------------------------------------
 async function viewCompare(a?: string, b?: string): Promise<string> {
-  const runs = (await api("/api/runs")).runs.filter((r: any) => r.status.state === "sealed").map((r: any) => r.run as string);
+  const runs = (await api("api/runs")).runs.filter((r: any) => r.status.state === "sealed").map((r: any) => r.run as string);
   if (runs.length < 2) return `<h1>Compare</h1><p class="muted">Needs two runs with a sealed score.</p>`;
   a ??= runs[0]; b ??= runs.find((r: string) => r !== a) ?? runs[1];
   const sel = (id: string, v: string) => `<select id="${id}">${runs.map((r: string) => `<option value="${esc(r)}"${r === v ? " selected" : ""}>${esc(r)}</option>`).join("")}</select>`;
   let out = `<h1>Compare two runs</h1><p class="muted small">Paired on the tasks both runs graded. Only the tasks where they disagree carry information (exact McNemar test).</p><p>${sel("ca", a!)} vs ${sel("cb", b!)}</p>`;
   try {
-    const c = await api(`/api/compare/${encodeURIComponent(a!)}/${encodeURIComponent(b!)}`);
+    const c = await api(`api/compare/${encodeURIComponent(a!)}/${encodeURIComponent(b!)}`);
     const list = (ts: string[], run: string) => ts.length ? ts.map((t) => `<a class="chip c-pass" href="${href("task", run, t)}">${esc(t)}</a>`).join(" ") : `<span class="muted">none</span>`;
     out += `<div class="cards"><div class="card"><div class="v">${num(c.aPassed)} vs ${num(c.bPassed)}</div><div class="l">passed of ${num(c.shared)} shared tasks</div></div>
       <div class="card"><div class="v">${num(c.aOnly.length)} / ${num(c.bOnly.length)}</div><div class="l">tasks only ${esc(c.a)} / only ${esc(c.b)} solved</div></div>
@@ -134,15 +171,15 @@ async function viewCompare(a?: string, b?: string): Promise<string> {
 
 // ---- competitions -------------------------------------------------------------------------------------------------
 async function viewCompetitions(): Promise<string> {
-  const { competitions } = await api("/api/competitions");
+  const { competitions } = await api("api/competitions");
   if (!competitions.length) return `<h1>Competitions</h1><p class="muted">None found. Add a <code>competitions/&lt;name&gt;/dashboard.ts</code>.</p>`;
   return `<h1>Competitions</h1>${competitions.map((c: any) => `<div class="card" style="max-width:640px;margin-bottom:10px"><a href="${href("competition", c.name)}"><b>${esc(c.title)}</b></a><div class="l">${esc(c.summary)}</div></div>`).join("")}`;
 }
 
 async function viewCompetition(name: string): Promise<string> {
-  const c = await api(`/api/competition/${encodeURIComponent(name)}`);
+  const c = await api(`api/competition/${encodeURIComponent(name)}`);
   const cards = c.numbers.map((n: any) => `<div class="card"><div class="v">${esc(n.value)}</div><div class="l">${esc(n.label)}</div>${n.note ? `<div class="muted small">${esc(n.note)}</div>` : ""}</div>`).join("");
-  const figs = c.figures.map((f: any) => `<figure><img src="/fig/${encodeURIComponent(name)}/${encodeURIComponent(f.id)}.svg" alt="${esc(f.title)}" loading="lazy"><figcaption><b>${esc(f.title)}.</b> <span class="muted">${esc(f.caption)}</span></figcaption></figure>`).join("");
+  const figs = c.figures.map((f: any) => `<figure><img src="fig/${encodeURIComponent(name)}/${encodeURIComponent(f.id)}.svg" alt="${esc(f.title)}" loading="lazy"><figcaption><b>${esc(f.title)}.</b> <span class="muted">${esc(f.caption)}</span></figcaption></figure>`).join("");
   return `<p class="small"><a href="#/competitions">← competitions</a></p><h1>${esc(c.title)}</h1><p class="muted">${esc(c.summary)}</p><div class="cards">${cards}</div><h2>Figures</h2><div class="figs">${figs}</div>`;
 }
 

@@ -42,6 +42,9 @@
   .verdict { background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--link); border-radius:6px; padding:10px 14px; max-width:80ch; }
   select { background:var(--panel); color:var(--fg); border:1px solid var(--line); border-radius:4px; padding:3px 6px; font:inherit; }
   svg.tl text { fill:var(--fg); font: 10px ui-monospace, monospace; }
+  .note { background:var(--panel); border:1px solid var(--line); border-left:4px solid #d29922; border-radius:6px; padding:8px 12px; margin:8px 0 12px; max-width:90ch; }
+  .banner { background:#1f3a5f; color:#cfe3ff; padding:8px 18px; font-size:0.9rem; } .banner code { color:#fff; }
+  tr.flag td { background:#1d1611; }
   .legend span { margin-right:12px; white-space:nowrap; } .sw { display:inline-block; width:10px; height:10px; margin-right:4px; border-radius:2px; vertical-align:middle; }
 </style>
 </head>
@@ -51,7 +54,8 @@
   <nav><a href="#/runs" data-tab="runs">runs</a><a href="#/compare" data-tab="compare">compare</a><a href="#/competitions" data-tab="competitions">competitions</a></nav>
   <span class="muted small" id="status"></span>
 </header>
+<div class="banner" id="banner" hidden>Static demo over the repo's sample data; run <code>bun run dashboard</code> locally for your own runs. <a href="https://github.com/rathko/kaggle-glassbox">Source on GitHub</a>.</div>
 <main id="app">loading…</main>
-<script src="/app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+{
+ "at": "2026-11-12T20:16:28.118Z",
+ "reader": "src/integrity/score-reader.ts",
+ "read": {
+  "taskField": "instance_id",
+  "outcomeField": "resolved",
+  "passed": 3,
+  "total": 18,
+  "rowsSha256": "56d401d7951e31e5f4e20749ff45f49597bd4fd8c6e93e17af25dd1ca7a2b7b1"
+ }
+}

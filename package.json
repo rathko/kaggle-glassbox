@@ -31,6 +31,7 @@
     "lb": "bun src/cli/leaderboard.ts",
     "paper-numbers": "bun competitions/gemma4-swe-agent/scripts/reproduce-paper-numbers.ts",
     "dashboard": "bun src/dashboard/serve.ts",
+    "dashboard:export": "bun src/dashboard/export.ts",
     "sample-runs": "bun examples/sample-runs/generate.ts"
   },
   "devDependencies": {

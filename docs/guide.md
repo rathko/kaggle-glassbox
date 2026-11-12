@@ -773,7 +773,10 @@ synthesis header says so.
 ```sh
 bun run dashboard                                         # the sample runs, http://127.0.0.1:8180
 bun src/dashboard/serve.ts --results results --port 8181  # your own runs (DASH_PORT also sets the port)
+bun run dashboard:export _site                            # the same pages as static files, for hosting
 ```
+
+**Live demo:** <https://rathko.github.io/kaggle-glassbox/>, the static export of the sample runs below.
 
 A local, read-only viewer over a results directory in [the run layout](#the-run-layout). One Bun server on
 127.0.0.1, no dependencies, no telemetry; every request reads the files fresh, so a run in flight is current on
@@ -786,6 +789,7 @@ refresh.
   Below that, the run x task matrix: each cell links to the task.
 - **Task.** The captured model calls in order, with time per call, tokens, each tool call and what the model was
   answering. Step-replay rows and fork-run screens for the task are listed below, with the task in other runs.
+  A structure-only task (below) shows its steps' shape instead, each marked "text withheld".
 - **Compare.** Two sealed runs, paired on their shared tasks: the tasks only one of them solved, an exact
   McNemar p-value, the single-draw noise band, and a plain verdict.
 - **Competitions.** Each `competitions/<name>/dashboard.ts` gets a page: its headline numbers, and its figures
@@ -803,7 +807,20 @@ captured through `wire-tap`, compacted, closed with `run-end` and read with `sco
 `bun run sample-runs`. `baseline` and `candidate` are the same agent, so every gap between them is noise: two
 baseline repeats land on 5/16 and 10/16. `candidate-r3` is closed but never read and `baseline-r4` is never
 closed, to show what the gate hides. `live-gemma4-qa` is a real run of [`examples/live-e2e/`](../examples/live-e2e/)
-against Gemma 4 31B on vLLM, with a live step replay and a live fork.
+against Gemma 4 31B on vLLM, with a live step replay and a live fork. `D176-sample` is structure only (below).
+
+**Structure-only runs.** Sometimes you can publish what a run did but not what it said: a competition's real tasks,
+your prompts. Such a run carries `<run>/structure/<task>.json` instead of a capture: per step, who acted, the tool
+name, when it started and how long it took, prompt and completion tokens, context growth, and the size of the tool
+result; per task, the outcome class, the stop reason, the first edit and any malfunction kinds. There is no text at
+all, and the page labels each step "text withheld". The reader re-types every field, so a crafted file cannot put
+text on the page. `D176-sample` is 18 real tasks of draw D176 (group F07 in the Gemma 4 paper's
+[`attempts.csv`](../competitions/gemma4-swe-agent/data/attempts.csv)), picked by outcome class, so its 3/18 is a
+sample, not the draw's score (48/129). Its outcomes and stop reasons match `attempts.csv` row for row.
+[`src/dashboard/structure.test.ts`](../src/dashboard/structure.test.ts) holds every structure file to a fixed
+vocabulary: no free text, no paths, no version labels.
+
+![A structure-only task: 18 steps of a real failed task, tool names, timings, tokens and context growth, two flagged malfunctions, every step marked text withheld](img/dashboard-structure.png)
 
 **A page for your competition.** Add `competitions/<name>/dashboard.ts` exporting `title`, `summary`,
 `numbers()` (label, value, optional note) and `figures` (`id`, `title`, `caption`, `svg()`). See
@@ -823,6 +840,14 @@ API (JSON, `Cache-Control: no-store`):
 Ids from the URL must be one safe path component; anything else is a 4xx and never a filesystem read. Unknown
 endpoints, runs, tasks, competitions and figures are 404 JSON. An unexpected error is 500 JSON and the server
 keeps serving. The contract is tested in [`src/dashboard/serve.test.ts`](../src/dashboard/serve.test.ts).
+
+**Hosting it.** `bun run dashboard:export <dir>` asks the same handler for every answer the page can need (runs,
+the matrix, every task in it, every pair of sealed runs, each competition and figure) and writes them as
+`<dir>/<path>.json` next to `index.html`. The page then reads those files by relative path, so it works at any
+URL prefix, and shows a "static demo" banner. Nothing is computed that the server would not show: the gate rule
+holds in the files too. [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) builds and publishes it on
+every push to `main`; turn it on once under Settings, Pages, Source: GitHub Actions. Tested in
+[`src/dashboard/export.test.ts`](../src/dashboard/export.test.ts), including that no file carries a local path.
 
 ## Testing
 
