@@ -6,6 +6,7 @@ the [repository root](../../README.md); this folder holds only what is specific 
 
 | folder | contents |
 |---|---|
+| [`paper/`](paper/) | the paper as submitted ([`paper.md`](paper/paper.md)) and its figures; tagged [`paper-v1`](https://github.com/rathko/kaggle-glassbox/releases/tag/paper-v1) |
 | [`data/`](data/) | anonymised aggregate data: per-attempt rows, re-run drift, flaky-10 decisions, the fork ledger, the task sets, the ideas that did not work, the pre-registered A/A study |
 | [`scripts/`](scripts/) | the scripts that recompute every number and figure in the paper from `data/`, with their tests |
 | [`docs/`](docs/) | [what was measured and how to reproduce it](docs/paper-reproduction.md), and a [worked case study](docs/case-study-edit-fix.md) |

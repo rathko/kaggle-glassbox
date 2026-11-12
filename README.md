@@ -89,7 +89,7 @@ The [full guide](docs/guide.md#using-it-on-your-own-competition) has the exact c
 
 **Tools:** [dashboard](docs/guide.md#dashboard) · [capture](docs/guide.md#capture) · [replay and fork](docs/guide.md#replay) · [integrity](docs/guide.md#integrity) · [noise floor](docs/guide.md#noise-floor) · [budget](docs/guide.md#budget) · [score quantisation](docs/guide.md#score-quant) · [analysis](docs/guide.md#analysis)
 
-**The paper:** [Gemma 4 SWE-agent data and scripts](competitions/gemma4-swe-agent/) · [Every number, mapped to its script](competitions/gemma4-swe-agent/docs/paper-reproduction.md) · [Docker](docs/guide.md#running-everything-in-docker)
+**The paper:** [Read it](competitions/gemma4-swe-agent/paper/paper.md) · [Gemma 4 SWE-agent data and scripts](competitions/gemma4-swe-agent/) · [Every number, mapped to its script](competitions/gemma4-swe-agent/docs/paper-reproduction.md) · [Docker](docs/guide.md#running-everything-in-docker)
 
 ## Open source, no lock-in
 
